@@ -1,0 +1,898 @@
+:root {
+  --primary-color: #100F3F;
+  --primary-bg-color: #F7F9FF;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border: 0;
+}
+
+.gradient {
+  position: relative;
+  background-image: url(../img/movers-packers-main-bg.png);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  z-index: 1;
+}
+.gradient::before {
+  position: absolute;
+  content: "";
+  box-sizing: border-box;
+  background: linear-gradient(to left, rgba(33, 52, 106, 0.5215686275), rgba(255, 255, 255, 0.5333333333));
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.gradient nav {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+.gradient nav .container .row .main-box ul li.active a {
+  font-weight: 700;
+}
+.gradient nav .container .row .main-box ul .btn a {
+  background-color: var(--primary-bg-color);
+  color: #100F3F;
+  padding: 7px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.gradient header {
+  position: relative;
+  z-index: 99;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.gradient .gradient-content-section {
+  padding: 80px 15px 40px;
+}
+.gradient .gradient-content-section .container .row h2 {
+  font-size: 52px;
+  color: var(--primary-color);
+}
+.gradient .gradient-content-section .container .row p {
+  font-size: 18px;
+  color: #021433;
+}
+
+.check-price-section {
+  position: relative;
+  margin-top: -150px;
+  z-index: 10;
+  padding-bottom: 80px;
+}
+.check-price-section .container .row .check-price-box {
+  border-radius: 0px 0px 12px 12px;
+}
+.check-price-section .container .row .check-price-box .select-city label {
+  border-bottom: 1px solid var(--primary-color);
+  background-color: #F1F4FE;
+  cursor: pointer;
+  padding: 20px 25px;
+  border-radius: 8px 8px 0px 0px;
+  gap: 10px;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+.check-price-section .container .row .check-price-box .select-city label p {
+  border-bottom: 2px dotted var(--primary-color);
+}
+.check-price-section .container .row .check-price-box .select-city label i:nth-child(3) {
+  margin-top: -5px;
+  font-size: 16px;
+}
+.check-price-section .container .row .check-price-box .form-modal .close-form-icon {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.check-price-section .container .row .check-price-box .form-modal .close-form-icon i {
+  font-size: 25px;
+  color: var(--primary-color);
+}
+.check-price-section .container .row .check-price-box .form-modal .instruction {
+  display: none;
+}
+.check-price-section .container .row .check-price-box .form-modal form {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #F1F4FE;
+  border-radius: 0 12px 12px 12px;
+  padding: 50px 10px;
+  box-shadow: 0px 3px 6.2px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box {
+  position: relative;
+  padding: 0px 15px;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box::after {
+  position: absolute;
+  content: "";
+  box-sizing: border-box;
+  height: 100%;
+  width: 1.5px;
+  background-color: #616161;
+  top: 0;
+  right: 25px;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box label {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: #434343;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box label::after {
+  content: "*";
+  color: #eb5757;
+  padding-left: 0.2rem;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box input {
+  width: 80%;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box input::-moz-placeholder {
+  color: #919191;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box input::placeholder {
+  color: #919191;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box input[type=date] {
+  cursor: pointer;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box:last-child::after {
+  display: none;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-box .input-box span {
+  position: absolute;
+  padding-top: 10px;
+  font-size: 12px;
+  display: block;
+  color: #eb5757;
+  font-weight: 600;
+  display: none;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-btn {
+  padding: 0px 60px;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-btn button {
+  background-color: var(--primary-color);
+  padding: 14px 20px;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 0;
+  width: 100%;
+}
+.check-price-section .container .row .check-price-box .form-modal form .form-btn button i {
+  margin-top: 3px;
+}
+
+.check-price-btn {
+  display: none !important;
+  padding: 15px 20px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.check-price-btn i {
+  color: white;
+}
+
+.work-section {
+  padding-bottom: 80px;
+}
+.work-section .container .row .main-heading {
+  text-align: center;
+  padding: 0px 15px;
+}
+.work-section .container .row .main-heading h2 {
+  position: relative;
+  color: var(--primary-color);
+  display: inline-block;
+}
+.work-section .container .row .main-heading h2::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background: radial-gradient(50% 151250% at 50% -100%, var(--primary-color) 0%, rgba(255, 255, 255, 0) 100%);
+  bottom: -10px;
+  right: 0;
+  transition: all 0.3s;
+}
+.work-section .container .row .main-heading h2:hover::after {
+  width: 100%;
+  left: 0;
+}
+.work-section .container .row .card-group {
+  padding-top: 20px;
+}
+.work-section .container .row .card-group .card {
+  padding: 0px 10px 20px;
+  flex: none;
+}
+.work-section .container .row .card-group .card .content {
+  position: relative;
+  border: 1px solid #919191;
+  border-radius: 20px;
+  padding: 20px 25px;
+  transition: all 0.3s;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1607843137);
+  height: 100%;
+}
+.work-section .container .row .card-group .card .content .detail span {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+.work-section .container .row .card-group .card .content .detail p {
+  font-size: 18px;
+  color: #434343;
+}
+.work-section .container .row .card-group .card .content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1607843137);
+}
+
+.testimonial-section {
+  position: relative;
+}
+.testimonial-section .container .row .swiper {
+  z-index: 0;
+}
+.testimonial-section .container .row .swiper .swiper-wrapper .swiper-slide .card {
+  padding: 15px;
+  background-color: transparent;
+}
+.testimonial-section .container .row .swiper .swiper-wrapper .swiper-slide .card .content {
+  padding: 0px 25px;
+}
+.testimonial-section .container .row .swiper .swiper-wrapper .swiper-slide .card .content .image-name img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.testimonial-section .container .row .swiper .swiper-wrapper .swiper-slide .card .content .image-name .name span {
+  color: var(--primary-color);
+  font-size: 18px;
+}
+.testimonial-section .container .row .swiper .swiper-wrapper .swiper-slide .card .content .image-name .name p {
+  color: rgba(16, 15, 63, 0.4901960784);
+  font-size: 14px;
+}
+.testimonial-section .container .row .swiper .arrow {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  background-color: var(--primary-color);
+  color: white !important;
+  transition: all 0.3s;
+  box-shadow: 0px 4px 14.2px 0px rgba(0, 0, 0, 0.0509803922);
+  cursor: pointer;
+}
+.testimonial-section .container .row .swiper .arrow::after {
+  font-size: 14px !important;
+}
+.testimonial-section .container .row .swiper .arrow:hover {
+  background-color: var(--primary-color);
+  color: white !important;
+}
+
+.faq-section {
+  padding: 60px 0px;
+}
+.faq-section .container .row .main-heading {
+  padding: 0px 15px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.faq-section .container .row .main-heading h2 {
+  position: relative;
+  color: var(--primary-color);
+  font-size: 42px;
+  display: inline-block;
+}
+.faq-section .container .row .main-heading h2::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background: radial-gradient(50% 151250% at 50% -100%, var(--primary-color) 0%, rgba(255, 255, 255, 0) 100%);
+  bottom: -10px;
+  right: 0;
+  transition: all 0.5s;
+}
+.faq-section .container .row .main-heading h2:hover::after {
+  width: 100%;
+  left: 0;
+}
+.faq-section .container .row .accordion {
+  width: 80%;
+}
+.faq-section .container .row .accordion .accordion-item {
+  margin-bottom: 20px;
+  border: 0;
+}
+.faq-section .container .row .accordion .accordion-item button {
+  border-radius: 8px;
+  background-color: var(--primary-bg-color);
+  border: 0;
+  box-shadow: none;
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 18px;
+}
+.faq-section .container .row .accordion .accordion-item .accordion-body {
+  color: var(--primary-color);
+}
+
+.consultation-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.708);
+  height: 100vh;
+  z-index: 90;
+  transform: scale(0);
+  overflow-y: scroll;
+}
+.consultation-form.active {
+  transition: all 0.3s;
+  transform: scale(1);
+}
+.consultation-form .container .row .form-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background-color: white;
+  width: 45%;
+  margin: 0px auto;
+  padding: 30px 40px 60px;
+  overflow-y: scroll;
+}
+.consultation-form .container .row .form-modal .close-form-icon {
+  position: absolute;
+  cursor: pointer;
+  right: 40px;
+  top: 30px;
+}
+.consultation-form .container .row .form-modal .close-form-icon i {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+.consultation-form .container .row .form-modal form {
+  padding: 0px 30px;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box {
+  position: relative;
+  padding-top: 30px;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box a {
+  background-color: #0F46A6;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  right: 0px;
+  bottom: 5px;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box .send-otp-msg {
+  position: absolute;
+  bottom: -23px;
+  font-size: 15px;
+  color: #EC7100;
+  font-weight: 600;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box input {
+  border: 0;
+  border-bottom: 1px solid #606266;
+  outline: none;
+  padding: 4px 10px;
+  width: 100%;
+  font-size: 18px;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box input::-moz-placeholder {
+  color: #A8A9A9;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box input::placeholder {
+  color: #A8A9A9;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box select {
+  border: none;
+  border-bottom: 1px solid #606266;
+  padding: 5px 10px;
+  outline: none;
+  font-size: 18px;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box input[type=number],
+.consultation-form .container .row .form-modal form .form-box .input-box input[type=tel] {
+  padding-left: 10px;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box input[type=number]::-webkit-outer-spin-button, .consultation-form .container .row .form-modal form .form-box .input-box input[type=number]::-webkit-inner-spin-button,
+.consultation-form .container .row .form-modal form .form-box .input-box input[type=tel]::-webkit-outer-spin-button,
+.consultation-form .container .row .form-modal form .form-box .input-box input[type=tel]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box:nth-child(3) .call {
+  display: none;
+  padding: 0px 15px;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box:nth-child(3) .call span {
+  display: block;
+  color: #606266;
+}
+.consultation-form .container .row .form-modal form .form-box .input-box:nth-child(3) .call a {
+  padding: 0;
+  display: block;
+  background-color: white;
+  color: #606266;
+  font-size: 16px;
+}
+.consultation-form .container .row .form-modal form .term-condition {
+  padding-top: 40px;
+}
+.consultation-form .container .row .form-modal form .term-condition input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.consultation-form .container .row .form-modal form .term-condition p {
+  color: var(--primary-color);
+}
+.consultation-form .container .row .form-modal form .form-btn button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px;
+  outline: none;
+}
+.consultation-form .container .row .form-modal form .form-btn button:disabled {
+  background-color: #D9D9D9;
+}
+
+.packers-section {
+  background-color: var(--primary-color);
+  padding: 60px 0px;
+}
+.packers-section .container .row .card-group {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+.packers-section .container .row .card-group .card {
+  flex: none;
+  padding: 15px;
+  background-color: transparent;
+}
+.packers-section .container .row .card-group .card .content h2 {
+  font-size: 48px;
+}
+.packers-section .container .row .card-group .card .content .btn {
+  padding: 0;
+  padding-top: 15px;
+}
+.packers-section .container .row .card-group .card .content .btn a {
+  display: inline-block;
+  padding: 12px 20px;
+  color: black;
+  border-radius: 64px;
+}
+
+@media (max-width: 1399px) {
+  .check-price-section .container .row .check-price-box .form-modal {
+    border-radius: 12px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-btn {
+    padding: 0px 25px;
+  }
+}
+@media (max-width: 1199px) {
+  .check-price-section .container .row .check-price-box .form-modal form .form-btn {
+    padding: 0px;
+  }
+  .consultation-form .container .row .form-modal {
+    width: 65%;
+  }
+}
+@media (max-width: 991px) {
+  .check-price-section {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.53);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    overflow: auto;
+    z-index: 90;
+  }
+  .check-price-section .container .row .check-price-box .select-city {
+    display: none !important;
+  }
+  .check-price-section .container .row .check-price-box .form-modal {
+    display: flex;
+    border-radius: 12px;
+    position: relative;
+    top: 15%;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .close-form-icon {
+    display: block;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .instruction {
+    width: 45%;
+    display: block;
+    padding: 60px 40px;
+    background-color: white;
+    border-radius: 12px 0px 0px 12px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .instruction h2 {
+    font-size: 48px;
+    color: var(--primary-color);
+  }
+  .check-price-section .container .row .check-price-box .form-modal .instruction p {
+    padding-top: 20px;
+    color: rgba(51, 51, 51, 0.64);
+  }
+  .check-price-section .container .row .check-price-box .form-modal form {
+    width: 55%;
+    display: flex;
+    padding: 60px 30px;
+    box-shadow: none;
+    border-radius: 0px 12px 12px 0;
+    margin-left: -1px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-box {
+    flex-wrap: wrap;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-box .input-box {
+    display: block;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 0.1rem solid #ddd;
+    padding: 5px 15px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-box .input-box::after {
+    display: none;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-box .input-box label {
+    font-size: 15px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-box .input-box input {
+    width: 100%;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-box .input-box span {
+    z-index: 10;
+    bottom: -14px;
+    left: 0;
+    font-size: 10px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-btn {
+    width: 100%;
+    padding-top: 30px;
+  }
+  .check-price-section.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+  .check-price-btn {
+    position: fixed;
+    width: 60%;
+    bottom: 35px;
+    display: flex !important;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    z-index: 80;
+  }
+  .work-section {
+    padding: 80px 0;
+  }
+  .work-section .container .row .card-group .card .content .detail p br {
+    display: none;
+  }
+  .testimonial-section .container .row .card-group .card-slider {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+  .testimonial-section .container .row .card-group .card-slider .card {
+    flex: none;
+  }
+  .faq-section .container .row .accordion {
+    width: 100%;
+  }
+  .consultation-form .container .row .form-modal {
+    width: 80%;
+  }
+  .packers-section .container .row .card-group {
+    gap: 0px !important;
+  }
+  .packers-section .container .row .card-group .card .content p br {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .gradient {
+    height: 70vh;
+  }
+  .gradient header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transform: all 0.3s;
+  }
+  .gradient header.active {
+    background-color: white !important;
+    box-shadow: 0px 5px 11px -7px black;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .instruction {
+    padding: 60px 30px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .instruction h2 {
+    font-size: 34px;
+  }
+  .check-price-btn {
+    bottom: 50px;
+  }
+  .work-section {
+    padding-bottom: 15px;
+  }
+  .work-section .container .row .main-heading h2 {
+    font-size: 32px !important;
+  }
+  .work-section .container .row .card-group .card .content {
+    padding: 20px;
+  }
+  .work-section .container .row .card-group .card .content .detail span {
+    display: block;
+    font-size: 20px;
+    padding-top: 10px;
+  }
+  .work-section .container .row .card-group .card .content .detail p {
+    font-size: 16px;
+  }
+  .faq-section .container .row .main-heading h2 {
+    font-size: 32px;
+  }
+  .consultation-form .container .row .form-modal {
+    width: 95%;
+  }
+  .packers-section .container .row .card-group .card {
+    padding: 5px;
+  }
+  .packers-section .container .row .card-group .card .content h2 {
+    font-size: 32px;
+  }
+  .packers-section .container .row .card-group .card .content p {
+    padding: 5px 0 !important;
+  }
+  .packers-section .container .row .card-group .card .content .btn a {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 740px) {
+  .gradient {
+    height: 90vh;
+  }
+  .gradient .gradient-content-section {
+    padding: 20px 15px 40px;
+  }
+  .check-price-btn {
+    bottom: 0px;
+  }
+}
+@media (max-width: 720px) {
+  .gradient .gradient-content-section {
+    padding: 85px 15px 40px;
+  }
+}
+@media (max-width: 575px) {
+  .gradient .gradient-content-section {
+    padding: 80px 15px 40px;
+  }
+  .gradient .gradient-content-section .container .row h2 {
+    font-size: 38px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal {
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    top: 180px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .instruction {
+    padding: 40px 30px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .instruction h2 {
+    font-size: 28px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form {
+    padding: 50px 15px;
+  }
+  .check-price-btn {
+    width: 90%;
+    bottom: 35px;
+  }
+  .work-section .container .row .card-group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .work-section .container .row .card-group .card {
+    width: 50%;
+    margin: 0;
+  }
+  .work-section .container .row .card-group .card .content {
+    padding: 20px 15px;
+  }
+  .testimonial-section .container .row .card-group {
+    position: relative;
+    overflow-x: hidden;
+  }
+  .testimonial-section .container .row .card-group button {
+    display: flex;
+    z-index: 99;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: all 0.3s;
+    outline: none;
+    box-shadow: 0px 4px 14.2px 0px rgba(0, 0, 0, 0.0509803922);
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+  }
+  .testimonial-section .container .row .card-group button:hover {
+    background-color: var(--primary-color);
+  }
+  .testimonial-section .container .row .card-group button:hover i {
+    color: white;
+  }
+  .testimonial-section .container .row .card-group button.left-arrow {
+    left: 15px;
+  }
+  .testimonial-section .container .row .card-group button.right-arrow {
+    right: 15px;
+  }
+  .testimonial-section .container .row .card-group .card-slider {
+    display: flex;
+    flex-wrap: unset;
+    transition: all 0.3s;
+    overflow: unset;
+  }
+  .testimonial-section .container .row .card-group .card-slider .card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .testimonial-section .container .row .card-group .card-slider .card .content {
+    width: 80%;
+    margin: 0px auto;
+  }
+  .faq-section {
+    padding-top: 30px;
+  }
+  .faq-section .container .row .accordion {
+    padding: 0px 15px;
+  }
+  .faq-section .container .row .accordion .accordion-item button {
+    font-size: 16px;
+  }
+  .consultation-form .container .row .form-modal form .form-box .input-box:nth-child(1) {
+    padding-top: 15px;
+  }
+  .consultation-form .container .row .form-modal .close-form-icon {
+    right: 15px;
+    top: 15px;
+  }
+  .consultation-form .container .row .form-modal {
+    padding: 30px 15px;
+  }
+  .consultation-form .container .row .form-modal form {
+    padding: 0px 15px;
+  }
+  .packers-section .container .row .card-group .card {
+    width: 100%;
+    padding: 15px;
+  }
+  .packers-section .container .row .card-group .card .content h2 {
+    text-align: center;
+  }
+  .packers-section .container .row .card-group .card .content p {
+    padding: 15px 0 !important;
+    text-align: center;
+  }
+  .packers-section .container .row .card-group .card .content .btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 470px) {
+  .gradient .gradient-content-section {
+    padding-top: 110px;
+  }
+  .gradient .gradient-content-section .container .row h2 {
+    text-align: start !important;
+  }
+  .gradient .gradient-content-section .container .row p {
+    text-align: start !important;
+  }
+  .check-price-section {
+    height: 110vh;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0s;
+    top: 100%;
+  }
+  .check-price-section .container .row .check-price-box .form-modal {
+    width: 100%;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .close-form-icon {
+    top: 30px;
+    right: 20px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal .instruction {
+    display: none;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%;
+    padding: 60px 20px;
+    border-radius: 12px 12px 0px 0px;
+  }
+  .check-price-section .container .row .check-price-box .form-modal form .form-btn button {
+    border-radius: 6px;
+  }
+  .check-price-section.active {
+    transition: all 0.3s;
+    opacity: 1;
+    padding-top: 0;
+    top: 55%;
+  }
+  .work-section .container .row .card-group .card {
+    width: 100%;
+    padding: 0px 15px;
+    margin-bottom: 15px;
+  }
+  .consultation-form .container .row .form-modal {
+    width: 100%;
+  }
+}
+@media (max-width: 380px) {
+  .check-price-section .container .row .check-price-box .form-modal {
+    top: 200px;
+  }
+}/*# sourceMappingURL=movers-and-packers.css.map */

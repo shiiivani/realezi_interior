@@ -1,0 +1,219 @@
+.card {
+  flex: none !important;
+  border: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+.gradient-section .banner {
+  position: relative;
+  overflow: hidden;
+  height: 130vh;
+  margin-top: -110px;
+}
+.gradient-section .banner .parallax-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.gradient-section .banner .parallax-container .parallax-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+.gradient-section .banner .parallax-container .text-overlay {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  top: 4%;
+}
+.gradient-section .banner .parallax-container .text-overlay h1 {
+  margin: 0;
+  font-size: 11.1693121693vw;
+  opacity: 0;
+  line-height: 1;
+}
+
+.work-play-section {
+  background-color: #111F3C;
+  padding: 120px 0px;
+}
+.work-play-section .container .row .text-effect {
+  position: relative;
+  overflow: hidden;
+  /* Prevents text from overflowing container */
+}
+.work-play-section .container .row #animated-text {
+  display: inline-block;
+  font-size: 32px;
+  line-height: 1.5;
+  width: 65%;
+}
+.work-play-section .container .row #animated-text span {
+  display: inline-block;
+  opacity: 0.1;
+  color: white;
+  font-weight: 700;
+}
+.work-play-section .container .row #animated-text span:nth-child(13), .work-play-section .container .row #animated-text span:nth-child(14), .work-play-section .container .row #animated-text span:nth-child(15) {
+  color: #EC7100;
+}
+
+.tablet-section {
+  background-color: #111F3C;
+  padding: 60px 0;
+}
+.tablet-section .container .row .main-heading {
+  padding: 0 15px;
+}
+.tablet-section .container .row .card-group .card {
+  border: 0;
+}
+.tablet-section .container .row .card-group .card .content {
+  width: 550px;
+  height: 350px;
+  border: 12px solid black;
+  border-radius: 30px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  perspective: 2000px;
+  overflow: hidden;
+}
+.tablet-section .container .row .card-group .card .content:hover {
+  transition-duration: 150ms;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.2666666667);
+}
+.tablet-section .container .row .card-group .card .content .glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  pointer-events: none;
+}
+.tablet-section .container .row .main-menu {
+  background-color: white;
+  border-radius: 64px;
+  padding: 10px 15px;
+  position: relative;
+  z-index: 99;
+  box-shadow: 0px 0px 25px -8px black;
+  transition: all 0.5s;
+  width: 50%;
+  margin: 0px auto;
+}
+.tablet-section .container .row .main-menu ul li {
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+}
+.tablet-section .container .row .main-menu ul li a {
+  display: block;
+  color: #111F3C;
+  border-radius: 64px;
+  min-width: 80px;
+  padding: 5px 10px;
+  z-index: 99;
+  gap: 5px;
+}
+.tablet-section .container .row .main-menu ul li a svg {
+  width: 24px;
+  height: 24px;
+}
+.tablet-section .container .row .main-menu ul li a svg path {
+  stroke: #111F3C;
+  fill: #111F3C;
+}
+.tablet-section .container .row .main-menu ul li.active a {
+  color: white !important;
+}
+.tablet-section .container .row .main-menu ul li.active a svg path {
+  fill: white;
+  stroke: white;
+}
+.tablet-section .container .row .main-menu .slideLine,
+.tablet-section .container .row .main-menu .hoverLine {
+  z-index: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sections {
+  height: 100%;
+  width: 1000vw;
+}
+
+.sectionTitle {
+  font-size: 30px;
+  color: #fff;
+}
+
+.section {
+  height: 100vh;
+  width: 100vw;
+  float: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  background: #111F3C;
+}
+
+.horizontal-scrolling {
+  position: relative;
+}
+.horizontal-scrolling .wrapper .svg-line {
+  position: absolute;
+  height: 100.66001813vh;
+  width: 100vw;
+  z-index: 99;
+  left: 300px;
+}
+
+/* your color classes here */
+footer {
+  border-radius: 0;
+}
+
+@media (max-width: 1299px) {
+  .tablet-section .container .row .main-menu {
+    width: 50%;
+  }
+}
+@media (max-width: 1199px) {
+  .tablet-section .container .row .main-menu {
+    width: 65%;
+  }
+}
+@media (max-width: 991px) {
+  .tablet-section .container .row .main-menu {
+    width: 80%;
+  }
+}/*# sourceMappingURL=about.css.map */
