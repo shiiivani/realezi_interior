@@ -425,7 +425,7 @@ li {
 .gradient {
   position: relative;
   background: none;
-  background-color: #100f3f;
+  background-color: #111f3c;
   overflow: hidden;
 }
 .gradient::before {
