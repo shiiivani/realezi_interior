@@ -2,6 +2,10 @@
   padding: 0;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -682,7 +686,6 @@ header .container .row .main-box .main-menu .slider-btn {
 }
 .section-three {
   padding: 20px 0 1% 0;
-  overflow: hidden;
 }
 
 .section-three h2 {
@@ -788,7 +791,7 @@ header .container .row .main-box .main-menu .slider-btn {
   color: #fff;
   border: none;
   cursor: pointer;
-  z-index: 10;
+  z-index: 20;
 }
 
 .section-three .prev-btn {
@@ -1424,6 +1427,10 @@ header .container .row .main-box .main-menu .slider-btn {
     width: 200px;
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .form-box form .input-box .budget-dropdown .budget-indicator span {
+    font-size: 0.85rem !important;
   }
 }
 @media screen and (min-width: 420px) {
