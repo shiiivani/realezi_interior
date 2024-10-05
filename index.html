@@ -4,34 +4,393 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Page</title>
 
+  <link rel="shortcut icon" href="assets/img/homeloan_logo_header.svg" type="image/x-icon">
+  <!-- bottstrap csn link start -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- bottstrap csn link end -->
 
+  <!-- fontfamily start -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Offside&display=swap"
     rel="stylesheet">
-
-  <!-- swiper js start -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-  <!-- swiper js end -->
+  <!-- robot start -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- robot end -->
+  <!-- fontfamily end -->
 
   <!-- css link start -->
   <link rel="stylesheet" href="assets/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/homeloan.css">
   <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/interior-page.css">
   <!-- css link end -->
-  <title>Home loan page</title>
+
+  <!-- bootstrap js start -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+  <!-- bootstrap js end -->
+  <!-- jquery start -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- jquery end -->
 </head>
 
 <body>
-  <!-- gradient section end -->
+
+  <!-- share-detail form start -->
+  <section class="share-detail-form position-fixed">
+    <div class="black-shadow" id="sharecls"></div>
+    <div class="close-icon d-flex justify-content-end">
+      <i class="fa-solid fa-xmark fs-3"></i>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="form-box bg-white m-auto">
+          <span class="fw-normal fs-5">Please share your details</span>
+          <form action="" id="shareDetailForm">
+            <div class="input-box">
+              <input type="text" id="name" placeholder="" required>
+              <label for="label_placeholder">Name</label>
+            </div>
+            <div class="input-box d-flex">
+              <select name="" id="countryCode">
+                <option value="+91">+91</option>
+                <option value="+01">+01</option>
+                <option value="+55">+55</option>
+              </select>
+              <input type="number" placeholder="" required>
+              <label for="label_placeholder_mobile">Enter mobile number</label>
+            </div>
+            <div class="input-box">
+              <input type="email" placeholder="" id="email" required>
+              <label for="label_placeholder">Email ID</label>
+            </div>
+            <div class="input-box">
+              <div class="property-type-dropdown">
+                <label for="propertyType" class="d-flex justify-content-between align-items-center">
+                  <p class="m-0" id="property"></p>
+                  <i class="fa-solid fa-angle-down"></i>
+                  <label for="label_placeholder">Property Type</label>
+                </label>
+                <div class="propertyType-list">
+                  <ul class="d-flex flex-wrap m-0">
+                    <li class="text-capitalize">Apartment</li>
+                    <li class="text-capitalize">Duplex</li>
+                    <li class="text-capitalize">Penthouse</li>
+                    <li class="text-capitalize">Villa</li>
+                    <li class="text-capitalize">Studio</li>
+                    <li class="text-capitalize">Independent House</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="term-condition d-flex align-items-center">
+              <input type="checkbox" id="termsCondition" required>
+              <p class="m-0 fw-normal ps-2">By submitting this form, I agree to accept and agree to Realezi’s T&C</p>
+            </div>
+            <button type="submit" id="shareDetailBtn" class="text-capitalize text-center" disabled>Submit</button>
+          </form>
+          <div class="great-msg position-absolute top-0 start-0 bg-white">
+            <div class="video">
+              <video src="assets/video/form-msg.mp4" width="100%" muted autoplay playsinline id="video"></video>
+              <div class="msg text-center hidden" id="msg">
+                <h3 class="fs-3 m-0" style="color: #EC7100;">Great!</h3>
+                <p class="m-0 pt-2" style="color: #434343;">Our Dedicated Relationship Manager will contact you shortly
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- share-detail form end -->
+
+  <!-- expert-talk-form start -->
+  <section class="expert-talk-form position-fixed">
+    <div class="black-shadow" id="expertcls"></div>
+    <div class="close-icon d-flex justify-content-end">
+      <i class="fa-solid fa-xmark fs-3"></i>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="form-box bg-white m-auto position-relative">
+          <span class="fw-normal fs-5">Please share your details</span>
+          <form action="" id="expertForm">
+            <div class="input-box">
+              <input type="text" id="expertName" placeholder="" required>
+              <label for="label_placeholder">Name</label>
+            </div>
+            <div class="input-box d-flex">
+              <select name="" id="expertCode" required>
+                <option value="+91">+91</option>
+                <option value="+01">+01</option>
+                <option value="+55">+55</option>
+              </select>
+              <input type="number" placeholder="" required id="expertNumber">
+              <label for="label_placeholder_mobile">Enter mobile number</label>
+            </div>
+            <div class="input-box">
+              <input type="email" placeholder="" required id="expertEmail">
+              <label for="label_placeholder">Email ID</label>
+            </div>
+            <div class="input-box">
+              <div class="property-type-dropdown">
+                <label for="propertyType" class="d-flex justify-content-between align-items-center">
+                  <p class="m-0" id="property-expert"></p>
+                  <i class="fa-solid fa-angle-down"></i>
+                  <label for="label_placeholder">Property Type</label>
+                </label>
+                <div class="propertyType-list">
+                  <ul class="d-flex flex-wrap m-0">
+                    <li class="text-capitalize">Apartment</li>
+                    <li class="text-capitalize">Duplex</li>
+                    <li class="text-capitalize">Penthouse</li>
+                    <li class="text-capitalize">Villa</li>
+                    <li class="text-capitalize">Studio</li>
+                    <li class="text-capitalize">Independent House</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="input-box">
+              <label for="budget" class="d-flex justify-content-between align-items-center">
+                <!-- <p class="m-0" id="property"></p> -->
+                <i class="fa-solid fa-angle-down"></i>
+                <label for="label_placeholder">Budget</label>
+              </label>
+              <div class="budget-dropdown">
+                <div class="min-max-value d-flex justify-content-between pt-2">
+                  <span class="d-block" id="minValue">Rs.1 Lakh</span>
+                  <span class="d-block" id="maxValue">Rs.2cr+</span>
+                </div>
+                <div class="budget-range">
+                  <input type="range" id="minBudgetRange" min="0" max="20000000" value="0" step="10000">
+                  <input type="range" id="maxBudgetRange" min="0" max="20000000" value="20000000" step="10000">
+                </div>
+                <div class="budget-indicator pt-5 d-flex justify-content-between ps-2 pe-2">
+                  <div>
+                    <span>1Lakh</span>
+                  </div>
+                  <div class="amount">
+                    <span>40L</span>
+                  </div>
+                  <div class="amount">
+                    <span>70L</span>
+                  </div>
+                  <div class="amount">
+                    <span>1Cr</span>
+                  </div>
+                  <div class="amount">
+                    <span>1.3Cr</span>
+                  </div>
+                  <div class="amount">
+                    <span>1.7Cr</span>
+                  </div>
+                  <div>
+                    <span>2Cr+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="term-condition d-flex align-items-center">
+              <input type="checkbox" id="expertCondition" required>
+              <p class="m-0 fw-normal ps-2">By submitting this form, I agree to accept and agree to Realezi’s T&C</p>
+            </div>
+            <button type="submit" id="ExpertDetailBtn" class="text-capitalize text-center" disabled>Submit</button>
+          </form>
+          <div class="expert-great-msg position-absolute top-0 start-0 bg-white">
+            <div class="video">
+              <video src="assets/video/form-msg.mp4" width="100%" muted autoplay playsinline id="expert-video"></video>
+              <div class="msg text-center hidden" id="expert-msg">
+                <h3 class="fs-3 m-0" style="color: #EC7100;">Great!</h3>
+                <p class="m-0 pt-2" style="color: #434343;">Our Dedicated Relationship Manager will contact you shortly
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- expert-talk-form end -->
+
+  <!-- free-consultation-form start -->
+  <section class="free-consultation-form position-fixed">
+    <div class="black-shadow" id="freecls"></div>
+    <div class="close-icon d-flex justify-content-end">
+      <i class="fa-solid fa-xmark fs-3"></i>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="form-box bg-white m-auto position-relative">
+          <span class="fw-normal fs-5">Please share your details</span>
+          <form action="" id="freeConsultationForm">
+            <div class="input-box">
+              <input type="text" id="consultationName" placeholder="" required>
+              <label for="label_placeholder">Name</label>
+            </div>
+            <div class="input-box d-flex">
+              <select name="" id="consultationCountryCode">
+                <option value="+91">+91</option>
+                <option value="+01">+01</option>
+                <option value="+55">+55</option>
+              </select>
+              <input type="number" placeholder="" required>
+              <label for="label_placeholder_mobile" id="consultationNumber">Enter mobile number</label>
+            </div>
+            <div class="input-box">
+              <input type="email" placeholder="" required id="consultationEmail">
+              <label for="label_placeholder">Email ID</label>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="" required id="consultationLocation">
+              <label for="label_placeholder">Location</label>
+            </div>
+            <div class="term-condition d-flex align-items-center">
+              <input type="checkbox" id="consultationCondion" required>
+              <p class="m-0 fw-normal ps-2">By submitting this form, I agree to accept and agree to Realezi’s T&C</p>
+            </div>
+            <button type="submit" id="freeConsultationBtn" class="text-capitalize text-center" disabled>Submit</button>
+          </form>
+          <div class="consultation-great-msg position-absolute top-0 start-0 bg-white">
+            <div class="video">
+              <video src="assets/video/form-msg.mp4" width="100%" muted autoplay playsinline
+                id="consultation-video"></video>
+              <div class="msg text-center hidden" id="consultation-msg">
+                <h3 class="fs-3 m-0" style="color: #EC7100;">Great!</h3>
+                <p class="m-0 pt-2" style="color: #434343;">Our Dedicated Relationship Manager will contact you shortly
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- free-consultation-form end -->
+
+  <!-- gradient slider start -->
   <section class="gradient">
+
+    <!-- slider-wrapper start -->
+    <section class="photo-slider-section">
+      <div class="slider-container">
+        <div class="row d-flex flex-nowrap">
+          <div class="card-group track">
+            <div class="card">
+              <img src="assets/img/gradient_slide_1.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_2.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_3.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_4.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_5.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_6.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_7.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_1.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_2.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_3.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_3.jpg" alt="">
+            </div>
+          </div>
+          <div class="card-group track">
+            <div class="card">
+              <img src="assets/img/gradient_slide_3.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_8.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_9.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_10.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_11.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_12.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_1.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_3.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_5.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_14.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_8.jpg" alt="">
+            </div>
+          </div>
+          <div class="card-group track">
+            <div class="card">
+              <img src="assets/img/gradient_slide_1.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_2.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_3.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_13.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_14.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_8.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_5.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_1.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_2.png" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_3.jpg" alt="">
+            </div>
+            <div class="card">
+              <img src="assets/img/gradient_slide_1.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- slider-wrapper end -->
+
+    <!-- header start -->
     <header class="border-0" id="header">
       <div class="container">
         <div class="row">
@@ -46,7 +405,7 @@
             <div class="main-menu m-auto">
               <ul class="p-0 d-flex flex-wrap m-0 col-lg-12 justify-content-between">
                 <li class="active">
-                  <a href="homeloan.html" class="text-capitalize py-1 text-center">Home Loan</a>
+                  <a href="interior-page.html" class="text-capitalize py-1 text-center">Interior</a>
                 </li>
                 <li>
                   <a class="text-capitalize py-1 text-center">Home</a>
@@ -61,6 +420,8 @@
                   <a class="text-capitalize py-1 text-center">Contact</a>
                 </li>
               </ul>
+              <button class="slider-btn prev-btn">❮</button>
+              <button class="slider-btn next-btn">❯</button>
             </div>
             <div class="menu-icon">
               <!-- <div class="icon">
@@ -79,1248 +440,447 @@
         </div>
       </div>
     </header>
+    <!-- header end -->
 
-    <!-- calculate-emi-section start -->
-    <section class="calculate-emi-section">
+    <!--gradient-content-section start -->
+    <section class="gradient-content-section">
       <div class="container">
-        <div class="row justify-content-between">
-          <div class="card-group col-sm-12 col-md-12 col-lg-5 col-xl-4">
-            <div class="card p-4 col-12">
-              <span class="d-block fs-5 fw-bold pb-3">Loan Details</span>
-              <form action="" onsubmit="return contactusData(event)" id="personalDetailForm">
-                <div class="input-box">
-                  <input type="number" class="" placeholder="" id="property-amount">
-                  <label class="form__label">Please enter Property Amount</label>
-                  <span id="property-amount-error" class="error-message">Please select a amount</span>
-                  <p id="amount-in-words" class="py-1 m-0" style="padding: 0px 10px 0px !important; font-size: 12px;">
-                    Amount in words will appear here.</p>
-                </div>
-
-                <div class="select-menu mt-3">
-                  <select class="form-select" aria-label="Default select example" id="city"
-                    onchange="clearError('city-error')">
-                    <option value="" disabled selected></option>
-                    <option value="Vadodara">Vadodara</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Bengaluru">Bengaluru</option>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Delhi">Delhi</option>
-                  </select>
-                  <label class="form__label" id="cityLabel">Please select a city</label>
-                  <span id="city-error" class="error-message">Please select a city</span>
-                </div>
-
-                <div class="input-box mt-4">
-                  <input type="number" placeholder="" id="pin-code" oninput="clearError('pin-code-error')">
-                  <label for="" class="form__label">Pin Code</label>
-                  <span id="pin-code-error" class="error-message">Enter a valid 6 digit pincode</span>
-                </div>
-
-                <div class="input-box">
-                  <p class="m-0 d-block py-4">Property Identified</p>
-                  <div class="selector d-flex gap-3">
-                    <label for="property-identified"><input type="radio" name="property-identified" value="yes"
-                        onclick="clearError('property-identified-error')"> Yes</label>
-                    <label for="property-identified"><input type="radio" name="property-identified" value="no"
-                        onclick="clearError('property-identified-error')"> No</label>
-                  </div>
-                  <span id="property-identified-error" class="error-message">Please mention whether you have already
-                    selected property to buy</span>
-                </div>
-
-                <div class="form-btn d-block" style="padding-top: 60px;">
-                  <button type="submit" id="peronalDetailBtn" class="border-0">Add Personal Details</button>
-                </div>
-              </form>
+        <div class="row">
+          <div class="card">
+            <div class="image">
+              <img src="assets/img/realezi_new_logo.svg" alt="logo" width="170px" class="d-block mb-2">
             </div>
-            <div class="card p-4 col-12 col-lg-12" id="verifyForm">
-              <form action="" id="verficationDetail">
-                <span class="d-block fw-medium pb-1">Loan Details</span>
-                <p class="m-0 pb-3" id="selectDetailValue">
-                  Looking for Rs. ${propertyAmount} loan in ${city}
-                </p>
-
-                <div class="detail bg-white">
-                  <div class="input-box">
-                    <input type="text" placeholder="" id="name" class="bg-white">
-                    <label class="form__label">Name</label>
-                    <span id="name-error" class="error-message">Please enter your name</span>
-                  </div>
-                  <div class="input-box mt-3">
-                    <input type="number" placeholder="" id="age" class="bg-white">
-                    <label class="form__label">Age</label>
-                    <span id="age-error" class="error-message">Please enter a valid age</span>
-                  </div>
-                  <div class="input-box mt-1">
-                    <p class="m-0 d-block" style="color: #434343;">Gender</p>
-                    <div class="selector d-flex gap-3">
-                      <label for="gender"><input type="radio" name="gender" id="male" value="male"> Male</label>
-                      <label for="gender"><input type="radio" name="gender" id="female" value="female"> Female</label>
-                    </div>
-                    <span id="gender-error" class="error-message">Please select your gender</span>
-                  </div>
-                  <div class="input-box mt-3">
-                    <input type="email" placeholder="" id="email" class="bg-white">
-                    <label class="form__label">Email ID</label>
-                    <span id="email-error" class="error-message">Please enter a valid email</span>
-                  </div>
-                  <div class="input-box mt-3 position-relative">
-                    <input type="tel" placeholder="" id="mobile" class="bg-white">
-                    <label class="form__label">Mobile Number</label>
-                    <button type="button" class="position-absolute bottom-0 end-0 py-2 px-3 bg-white border-1 rounded-2"
-                      id="send-otp">Send OTP</button>
-                    <span id="mobile-error" class="error-message position-absolute">Please enter a valid mobile
-                      number</span>
-                  </div>
-                  <div class="input-box position-relative opacity-0" style="margin-top: 30px !important;">
-                    <input type="number" placeholder="" id="otp" class="bg-white">
-                    <label class="form__label">Enter OTP</label>
-                    <span id="otp-error" class="error-message">Please enter the OTP</span>
-                    <span class="verified position-absolute end-0 bottom-0">Verified</span>
-                  </div>
-                </div>
-                <div class="form-btn d-block pt-2">
-                  <button type="submit" id="submit-button" class="border-0" disabled>Submit</button>
-                </div>
-              </form>
+            <div class="detail">
+              <span class="d-block">Interior spaces that <br> speaks to you</span>
+              <p class="m-0 text-white py-4">From foundation to furnishing , we do it all</p>
             </div>
-            <div class="card col-12 col-lg-12" id="verifyForm-confirm">
-              <div class="confirmation-msg">
-                <video src="assets/video/form-msg.mp4" width="100%" autoplay muted inline
-                  id="verify-confirmation-video"></video>
-                <div class="great-msg text-center mt-4">
-                  <h3 class="fs-3 m-0" style="color: #EC7100;">Great!</h3>
-                  <p class="m-0 pt-2" style="color: #434343;">Our Dedicated Relationship Manager will contact you
-                    shortly
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slider col-lg-7">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="image d-flex justify-content-center">
-                    <img src="assets/img/homeloan_main-slide_1.png" alt="" height="350px">
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="image d-flex justify-content-center">
-                    <img src="assets/img/homeloan_main-slide-2.png" alt="" height="350px">
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="image d-flex justify-content-center">
-                    <img src="assets/img/homeloan_main-slide_3.png" alt="" height="350px">
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="image d-flex justify-content-center">
-                    <img src="assets/img/homeloan_main-slide-4.png" alt="" height="350px">
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-            <div class="detail text-center pt-3">
-              <h1 class="m-0 pb-2">Calculate your EMI</h1>
-              <p class="m-0">Use Realezi EMI calculator to calculate your monthly EMI</p>
+            <div class="btn d-block border-0">
+              <a href="#" class="text-capitalize d-inline-block" id="consultation">Free Consultation</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- calculate-emi-section end -->
+    <!-- gradient-content-section end -->
   </section>
-  <!-- gradient section end -->
+  <!-- gradient slider en -->
 
-  <!-- home-loan-calculator-section start -->
-  <section class="homeloan-calculator-section">
+  <!-- service-section start -->
+  <section class="service-section">
     <div class="container">
       <div class="row">
-        <div class="main-heading">
-          <h2 class="text-center pb-5">Loan EMI Calculator</h2>
-        </div>
-        <div
-          class="card-group col-sm-12 justify-content-sm-center col-md-12 col-lg-8 justify-content-lg-between align-items-center">
-          <div class="card border-0 col-sm-12 col-md-12 col-lg-6">
-            <div class="calc">
-              <div class="value d-flex justify-content-between align-items-center pb-1">
-                <p class="m-0">Loan amount</p>
-                <label for="" id="loan"></label>
-              </div>
-              <div class="input-box">
-                <input type="range" class="form-range" min="100000" max="10000000" id="loanRange" value="1000000">
-              </div>
-            </div>
-            <div class="calc">
-              <div class="value d-flex justify-content-between align-items-center pb-1">
-                <p class="m-0">Loan Rate of Interest (%)</p>
-                <label for="" id="intrest"></label>
-              </div>
-              <div class="input-box">
-                <input type="range" class="form-range" min="1" max="30" id="rateOfInterest" step="0.10" value="6.62">
-              </div>
-            </div>
-            <div class="calc">
-              <div class="value d-flex justify-content-between align-items-center pb-1">
-                <p class="m-0">Loan Tenure</p>
-                <label for="" id="tenure"></label>
-              </div>
-              <div class="input-box">
-                <input type="range" class="form-range" min="1" max="30" id="loanTenure" value="5">
-              </div>
-            </div>
-            <div class="total-calc">
-              <div class="value d-flex justify-content-between align-items-center pb-2">
-                <p class="m-0">Monthly EMI</p>
-                <label for="" id="emi-result"></label>
-              </div>
-              <div class="value d-flex justify-content-between align-items-center pb-2">
-                <p class="m-0">Principal amount</p>
-                <label for="" id="principal-result"></label>
-              </div>
-              <div class="value d-flex justify-content-between align-items-center pb-2">
-                <p class="m-0">Total Interest</p>
-                <label for="" id="total-interest-result"></label>
-              </div>
-              <div class="value d-flex justify-content-between align-items-center pb-2">
-                <p class="m-0">Total amount</p>
-                <label for="" id="total-amount-result"></label>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 col-sm-7 pt-md-5 col-md-6 col-lg-5">
-            <canvas id="loanChart" width="288" height="288"></canvas>
-          </div>
-        </div>
-
-        <div class="news col-12 col-lg-4 ps-5 pt-5 pt-lg-0">
-          <h2 class="text-center pb-2 text-capitalize">News</h2>
-          <div class="box py-4">
-            <div class="card-group overflow-y-auto">
-              <div class="card pb-4">
-                <div class="content d-flex">
-                  <div class="image ">
-                    <img src="assets/img/news_1.png" alt="" width="80px" height="71px">
-                  </div>
-                  <div class="detail px-3">
-                    <p class="m-0 fw-medium">Emprendedurismo. Propósito e incertidumbre, dos..</p>
-                    <span class="fw-normal">March 6, 2024</span>
-                  </div>
-                </div>
-              </div>
-              <div class="card pb-4">
-                <div class="content d-flex">
-                  <div class="image">
-                    <img src="assets/img/news_1.png" alt="" width="80px" height="71px">
-                  </div>
-                  <div class="detail px-3">
-                    <p class="m-0 fw-medium">Emprendedurismo. Propósito e incertidumbre, dos..</p>
-                    <span class="fw-normal">March 6, 2024</span>
-                  </div>
-                </div>
-              </div>
-              <div class="card pb-4">
-                <div class="content d-flex">
-                  <div class="image">
-                    <img src="assets/img/news_1.png" alt="" width="80px" height="71px">
-                  </div>
-                  <div class="detail px-3">
-                    <p class="m-0 fw-medium">Emprendedurismo. Propósito e incertidumbre, dos..</p>
-                    <span class="fw-normal">March 6, 2024</span>
-                  </div>
-                </div>
-              </div>
-              <div class="card  pb-4">
-                <div class="content d-flex">
-                  <div class="image">
-                    <img src="assets/img/news_1.png" alt="" width="80px" height="71px">
-                  </div>
-                  <div class="detail px-3">
-                    <p class="m-0 fw-medium">Emprendedurismo. Propósito e incertidumbre, dos..</p>
-                    <span class="fw-normal">March 6, 2024</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- home-loan-calculator-section end -->
-
-  <!-- we-work-section start -->
-  <section class="we-work-section">
-    <div class="container">
-      <div class="row justify-content-center  position-relative">
-        <div class="main-heading pb-5">
-          <h2 class="text-center pb-5 text-capitalize">The Way We Work</h2>
-        </div>
-        <div class="indicators">
-          <div class="arrow d-flex gap-2 justify-content-center position-absolute">
-            <img src="assets/img/line-1.svg" alt="">
-            <img src="assets/img/blue_polygon.svg" alt="" style="margin-top: -35px;">
-            <span class="fw-bold" style="margin-top: -15px;">Compare Various <br> Bank Offer</span>
-          </div>
-          <div class="arrow  position-absolute">
-            <img src="assets/img/line-2.svg" alt="">
-            <div class="d-flex align-items-center gap-2" style="margin-left: 55px;margin-top: 10px;">
-              <img src="assets/img/red-polygon.svg">
-              <span class="fw-bold">Submit Details & <br> Apply to Banks</span>
-            </div>
-          </div>
-          <div class="arrow d-flex gap-2 justify-content-center position-absolute">
-            <img src="assets/img/orange-polygon.svg" alt="" style="margin-top: 45px;">
-            <span class="fw-bold" style="margin-top: 30px;">Relax While Banks <br> Reach Out to You</span>
-            <img src="assets/img/line_3.svg" alt="">
-          </div>
-          <div class="arrow d-flex gap-2 justify-content-center position-absolute">
-            <div style="margin-left: 30px; margin-top: -50px;" class="d-flex gap-3">
-              <img src="assets/img/green-polygon.svg" height="27px" style="margin-top: 15px;">
-              <span class="fw-bold">Secure Your Home <br> Loan</span>
-            </div>
-            <img src="assets/img/line-4.svg" alt="">
-          </div>
-        </div>
-        <div class="round d-flex justify-content-center flex-wrap p-0" style="width: 500px;">
-          <div class="quarter position-relative" style="width: 195px; height: 195px;">
-            <p class="m-0 fw-medium position-absolute text-center text-white">Compare Offers</p>
-          </div>
-          <div class="quarter position-relative" style="width: 195px; height: 195px;">
-            <p class="m-0 fw-medium position-absolute text-center text-white">Apply Now</p>
-          </div>
-          <div class="quarter position-relative" style="width: 195px; height: 195px;">
-            <p class="m-0 fw-medium position-absolute text-center text-white">Get Loan</p>
-          </div>
-          <div class="quarter position-relative" style="width: 195px; height: 195px;">
-            <p class="m-0 fw-medium position-absolute text-center text-white">Wait for Response</p>
-          </div>
-          <div class="inner-circle"></div>
-          <div class="blue-circle"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- we-work-section end -->
-
-  <!-- eligibility-caculator-section start -->
-  <section class="eligibility-calculator-section">
-    <div class="container">
-      <div class="row">
-        <div class="main-heading">
-          <h2 class="text-center pb-5 text-capitalize">Eligibility Calculator</h2>
-        </div>
-        <div class="card col-lg-7 m-auto">
-          <form action="">
-            <div class="calc">
-              <div class="value d-flex justify-content-between align-items-center pb-1">
-                <p class="m-0">Yearly monthly salary (INR)</p>
-                <div class="number position-relative">
-                  <input type="number" id="salary" min="200000" max="50000000"></input>
-                  <img src="assets/img/inr_symbol.svg" class="position-absolute" width="18px" alt="">
-                </div>
-              </div>
-              <div class="min-max d-flex justify-content-between align-items-center">
-                <span>₹20k</span>
-                <p class="m-0">₹2Cr+</p>
-              </div>
-              <div class="input-box">
-                <input type="range" class="form-range" min="200000" max="20000000" id="range-salary" value="5000000"
-                  step="10000">
-              </div>
-            </div>
-            <div class="calc">
-              <div class="value d-flex justify-content-between align-items-center pb-1">
-                <p class="m-0">Tenure (Years)</p>
-                <div class="number position-relative">
-                  <input type="number" id="emi-tenure" min="2" max="30"></input>
-                </div>
-              </div>
-              <div class="min-max d-flex justify-content-between align-items-center">
-                <span>2 years</span>
-                <p class="m-0">30 years</p>
-              </div>
-              <div class="input-box">
-                <input type="range" class="form-range" min="2" max="30" id="range-tenure" value="6">
-              </div>
-            </div>
-            <div class="calc">
-              <div class="value d-flex justify-content-between align-items-center pb-1">
-                <p class="m-0">Interest Rates (%PA)</p>
-                <div class="number position-relative">
-                  <input type="number" id="emi-intrest" min="6" max="30"></input>
-                </div>
-              </div>
-              <div class="min-max d-flex justify-content-between align-items-center">
-                <span>6%</span>
-                <p class="m-0">30%</p>
-              </div>
-              <div class="input-box">
-                <input type="range" class="form-range" min="6" max="30" id="range-intrest" value="8.8" step="0.10">
-              </div>
-            </div>
-            <div class="calc">
-              <div class="value d-flex justify-content-between align-items-center pb-1">
-                <p class="m-0">Other Monthly EMI (INR)</p>
-                <div class="number position-relative">
-                  <input type="number" id="emi-other" min="0" max="50000000"></input>
-                  <img src="assets/img/inr_symbol.svg" class="position-absolute" width="18px" alt="">
-                </div>
-              </div>
-              <div class="min-max d-flex justify-content-between align-items-center">
-                <span>₹0</span>
-                <p class="m-0">₹2Cr+</p>
-              </div>
-              <div class="input-box">
-                <input type="range" class="form-range" min="0" max="20000000" id="range-otherEmi" value="0"
-                  step="10000">
-              </div>
-            </div>
-          </form>
-          <div class="home-eligibility col-12 col-sm-12 col-md-8 col-lg-7 text-center m-auto">
+        <div class="card-group d-flex flex-wrap justify-content-center">
+          <div class="card">
             <div class="content">
-              <p class="m-0">Home loan Eligibility</p>
-              <p class="d-block m-0" id="eligibility"></p>
-            </div>
-            <div class="content pt-2">
-              <span class="m-0">Monthly EMI</span>
-              <span class="d-block" id="monthly"></span>
+              <div class="detail">
+                <span class="text-capitalize text-white">Complete Turnkey Services</span>
+                <p class="m-0 text-white pt-2">With an emphasis on details, extraordinary designs and exceptional
+                  customer service, we bring your dreams to life.</p>
+              </div>
+              <!-- <a href="#" class="text-white">Know More</a>  -->
             </div>
           </div>
-          <div class="btn border-0 p-0 d-flex flex-sm-wrap gap-sm-3 pt-5 gap-5">
-            <a href="#" class="text-center col-12 col-sm-12 col-lg-4">Calculate EMI</a>
-            <a href="#" class="text-center col-12 col-sm-12 col-lg-4 popUp">Apply for Home Laon</a>
+          <div class="card">
+            <div class="content">
+              <div class="image d-flex justify-content-center">
+                <canvas id="weDesign" width="1000px" height="250px"></canvas>
+              </div>
+              <div class="detail text-center">
+                <span class="text-capitalize pt-2">We Design</span>
+                <p class="m-0 pt-2">From completed homes to modular kitchens, and storage to decor, our top interior
+                  designers create spaces that match your vision.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="image d-flex justify-content-center">
+                <canvas id="weExcute" width="1000px" height="800px"></canvas>
+              </div>
+              <div class="detail text-center">
+                <span class="text-capitalize pt-2">We Execute</span>
+                <p class="m-0 pt-2">We follow a meticulous planning approach with detail-driven designs for interiors of
+                  your homes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="image d-flex justify-content-center">
+                <!-- <img src="assets/img/manage.png" alt="we design" height="137px"> -->
+                <canvas id="weManage"></canvas>
+              </div>
+              <div class="detail text-center">
+                <span class="text-capitalize pt-2">We Manage</span>
+                <p class="m-0 pt-2">Our top interior designers spearhead quality assurance by extending support after
+                  the execution of home projects.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
   </section>
-  <!-- eligibility-caculator-section end -->
+  <!-- service-section end -->
 
-  <!-- testimonial-section start -->
-  <section class="testimonial-section">
+  <!-- shot-section start -->
+  <div class="section-three">
+    <h2 class="text-center">Shots</h2>
+    <div class="video-slider position-relative">
+      <button class="nav-btn prev-btn"><img src="./images/right-arrow-white.png" width="18px"></button>
+      <div class="video-container d-flex justify-content-start">
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C-iC6iLtniX/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C0vJn2bIifD/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C7MVWCmtPpN/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C87CirjNaru/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C4nxoM9NYs1/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C53Zv--LLAa/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C0vJn2bIifD/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C-iC6iLtniX/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+        <div class="video">
+          <div class="instagram-video"
+            style="position: relative; width: 200px; height: 350px; overflow: hidden;border-radius: 15px">
+            <iframe src="https://www.instagram.com/reel/C0vJn2bIifD/embed" width="300" height="430" frameborder="0"
+              scrolling="no" allowtransparency="true"
+              style="position: absolute; top: -70px; left: 52%;transform: translateX(-50%); "></iframe>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <p>Semi furnished 1 BHK in block 2, Garden Villas</p>
+          </div>
+        </div>
+
+      </div>
+      <button class="nav-btn next-btn"><img src="./images/right-arrow-white.png" width="18px"></button>
+    </div>
+  </div>
+  <!-- shot-section end -->
+
+  <!-- expert-section start -->
+  <section class="expert-section">
     <div class="container">
       <div class="row">
-        <div class="card-group justify-content-center align-items-center">
-          <div class="card col-sm-12 col-md-12 text-md-center col-lg-5">
-            <div class="main-heading">
-              <h2 class="m-0 pb-col-4 pb-md-4">What our <br> Customers say</h2>
+        <div class="main-heading">
+          <h2 class="m-0 pb-3">Transform Your Space with Experts</h2>
+          <p class="m-0 pb-3">Elevate every corner of your home with our all-in-one design solutions. From expert
+            consultation <br> to personalized decorating and comprehensive design services, we bring your vision to life
+            with <br> style and elegance."</p>
+          <div class="btn d-block text-start ps-0">
+            <a href="#" id="expertTalk" class="text-white d-inline-block">Talk to Our expert</a>
+          </div>
+        </div>
+        <div class="card-group justify-content-between flex-wrap pt-5">
+          <div class="card text-center">
+            <div class="content h-100">
+              <div class="image d-flex justify-content-center">
+                <!-- <img src="assets/img/design_service.png" alt="design_service" width="120px"> -->
+                <canvas id="designService" width="1000px" height="450px"></canvas>
+              </div>
+              <div class="detail">
+                <span class="d-block py-1">Design services</span>
+                <p class="m-0">Transform your space with our expert interior design services, tailored to your unique
+                  style.</p>
+              </div>
             </div>
           </div>
-          <div class="card col-sm-12 col-md-12 col-lg-5">
-            <div id="carouselExampleCaptions" class="carousel slide">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                  aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                  aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                  aria-label="Slide 3"></button>
+          <div class="card text-center">
+            <div class="content h-100">
+              <div class="image d-flex justify-content-center">
+                <!-- <img src="assets/img/home_improvment.png" alt="home_improvment" width="120px"> -->
+                <canvas id="homeImprovements" width="1000px" height="450px"></canvas>
               </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="client d-flex justify-content-between align-items-center">
-                    <div class="image-name d-flex align-items-center">
-                      <img src="assets/img/testimonial-1.jpg" alt="">
-                      <div class="name">
-                        <span class="m-0 text-capitalize fw-bold">Debojyoti Ghosh</span>
-                        <p class="m-0 text-capitalize">Pune</p>
-                      </div>
-                    </div>
-                    <div class="rating">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                    </div>
-                  </div>
-                  <div class="review">
-                    <p class="m-0 fw-bold pt-5">We applied for a joint Home Loan with realezi for our new House in Pune.
-                      Liked the services and offers.</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="client d-flex justify-content-between align-items-center">
-                    <div class="image-name d-flex align-items-center">
-                      <img src="assets/img/testimonial-1.jpg" alt="">
-                      <div class="name">
-                        <span class="m-0 text-capitalize fw-bold">Debojyoti Ghosh</span>
-                        <p class="m-0 text-capitalize">Pune</p>
-                      </div>
-                    </div>
-                    <div class="rating">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                    </div>
-                  </div>
-                  <div class="review">
-                    <p class="m-0 fw-bold pt-5">We applied for a joint Home Loan with realezi for our new House in Pune.
-                      Liked the services and offers.</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="client d-flex justify-content-between align-items-center">
-                    <div class="image-name d-flex align-items-center">
-                      <img src="assets/img/testimonial-1.jpg" alt="">
-                      <div class="name">
-                        <span class="m-0 text-capitalize fw-bold">Debojyoti Ghosh</span>
-                        <p class="m-0 text-capitalize">Pune</p>
-                      </div>
-                    </div>
-                    <div class="rating">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                      <img src="assets/img/testi_review.png" alt="">
-                    </div>
-                  </div>
-                  <div class="review">
-                    <p class="m-0 fw-bold pt-5">We applied for a joint Home Loan with realezi for our new House in Pune.
-                      Liked the services and offers.</p>
-                  </div>
-                </div>
+              <div class="detail">
+                <span class="d-block py-1">Home Improvements</span>
+                <p class="m-0">Revamp your living space effortlessly with our expert home decorating services and
+                  creative ideas.</p>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+            </div>
+          </div>
+          <div class="card text-center">
+            <div class="content h-100">
+              <div class="image d-flex justify-content-center">
+                <!-- <img src="assets/img/design_service.png" alt="design_consultation" width="124px"> -->
+                <canvas id="designConsultation" width="1000px" height="500px"></canvas>
+              </div>
+              <div class="detail">
+                <span class="d-block py-1">Design consultation</span>
+                <p class="m-0">Bring your vision to life with our expert design consultation, tailored to your unique
+                  style and needs.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- testimonial-section end -->
+  <!-- expert-section end -->
 
-  <!-- form-popup section start -->
-  <section class="form-popUp-section">
-    <div class="black-shadow" id="clsform"></div>
-    <div class="close-icon" id="closeOfferForm">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle"
-        viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-        <path
-          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-      </svg>
-    </div>
+  <!-- simple-step-section start -->
+  <section class="simple-step-section">
     <div class="container">
       <div class="row">
-        <div class="card-group position-relative justify-content-center">
-          <div class="card p-4 col-12 col-md-8 col-lg-6 col-xl-5">
-            <span class="d-block fs-5 fw-medium pb-4">Avail best offers</span>
-            <form action="" onsubmit="return offerForm(event)" id="offerForm">
-              <!-- <div class="select-menu">
-                <select class="form-select" aria-label="Default select example" id="propertyAmount" onchange="resetErrorState('property-amountError')">
-                  <option value="" disabled selected></option>
-                  <option value="200000">200000</option>
-                  <option value="500000">500000</option>
-                  <option value="1000000">1000000</option>
-                  <option value="1500000">1500000</option>
-                </select>
-                <label class="form__label">Select Property Amount</label>
-                <span class="error-message" id="property-amountError">Please select a amount</span>
-              </div> -->
-              <div class="input-box">
-                <input type="number" class="" placeholder="" id="propertyAmount">
-                <label class="form__label">Please enter Property Amount</label>
-                <span id="property-amountError" class="error-message">Please select a amount</span>
-                <p id="offer-amount-in-words" class="py-1 m-0"
-                  style="padding: 0px 10px 0px !important; font-size: 12px;">Amount in words will appear here.</p>
-              </div>
-
-              <div class="select-menu mt-4">
-                <select class="form-select" aria-label="Default select example" id="location"
-                  onchange="resetErrorState('cityError')">
-                  <option value="" disabled selected></option>
-                  <option value="Mumbai">Mumbai</option>
-                  <option value="Bengaluru">Bengaluru</option>
-                  <option value="Hyderabad">Hyderabad</option>
-                  <option value="Delhi">Delhi</option>
-                </select>
-                <label class="form__label" id="offerFormLabel">Please select a city</label>
-                <span class="error-message" id="cityError">Please select a City</span>
-              </div>
-
-              <div class="input-box mt-4">
-                <input type="number" placeholder="" id="pinCode" onchange="resetErrorState('pin-codeError')">
-                <label for="" class="form__label">Pin Code</label>
-                <span id="pin-codeError" class="error-message">Enter a valid 6 digit pincode</span>
-              </div>
-
-              <div class="input-box">
-                <p class="m-0 d-block py-4">Property Identified</p>
-                <div class="selector d-flex gap-3">
-                  <label for="offerIdentified"><input type="radio" name="offerIdentified" value="yes"> Yes</label>
-                  <label for="offerIdentified"><input type="radio" name="offerIdentified" value="no"> No</label>
-                </div>
-                <span id="property-identifiedError" class="error-message">Please mention whether you have already
-                  selected property to buy</span>
-              </div>
-
-              <div class="form-btn d-block" style="padding-top: 60px;">
-                <button type="submit" id="offerBtn" class="border-0" disabled>Add Personal Details</button>
-              </div>
-            </form>
+        <div class="card-group justify-content-between flex-wrap">
+          <div class="card col-7 col-md-12 col-lg-6">
+            <div class="content">
+              <h2 class="m-0 fw-semibold">Simple Steps to <br> Transform Your Home</h2>
+            </div>
           </div>
-          <div class="card p-4 col-12 col-md-8 col-lg-6 col-xl-5" id="offerVerifyForm">
-            <form action="" id="offerFormDetail">
-              <span class="d-block fw-medium pb-1">Loan Details</span>
-              <p class="m-0 pb-3" id="offerFormValue">
-                Looking for Rs. ${propertyAmount} loan in ${city}
-              </p>
-
-              <div class="detail bg-white">
-                <div class="input-box">
-                  <input type="text" placeholder="" id="offerName" class="bg-white">
-                  <label class="form__label">Name</label>
-                  <span id="nameError" class="error-message">Please enter your name</span>
-                </div>
-                <div class="input-box mt-3">
-                  <input type="number" placeholder="" id="offerAge" class="bg-white">
-                  <label class="form__label">Age</label>
-                  <span id="ageError" class="error-message">Please enter a valid age</span>
-                </div>
-                <div class="input-box mt-1">
-                  <p class="m-0 d-block" style="padding: 10px !important;color: #434343;">Gender</p>
-                  <div class="selector d-flex gap-3">
-                    <label for="offerIdentified"><input type="radio" name="offerIdentified" id="male" value="male">
-                      Male</label>
-                    <label for="offerIdentified"><input type="radio" name="offerIdentified" id="female" value="female">
-                      Female</label>
-                  </div>
-                  <span id="genderError" class="error-message">Please select your gender</span>
-                </div>
-                <div class="input-box mt-3">
-                  <input type="email" placeholder="" id="offerEmail" class="bg-white">
-                  <label class="form__label">Email ID</label>
-                  <span id="emailError" class="error-message">Please enter a valid email</span>
-                </div>
-                <div class="input-box mt-3 position-relative">
-                  <input type="tel" placeholder="" id="offerMobile" class="bg-white">
-                  <label class="form__label">Mobile Number</label>
-                  <button type="button" name="btn"
-                    class="position-absolute bottom-0 end-0 py-2 px-3 bg-white border-1 rounded-2">Send OTP</button>
-                  <span id="mobileError" class="error-message position-absolute">Please enter a valid mobile
-                    number</span>
-                </div>
-                <div class="input-box position-relative opacity-0" style="margin-top: 35px !important;">
-                  <input type="number" placeholder="" id="offerOtp" class="bg-white">
-                  <label class="form__label">Enter OTP</label>
-                  <span id="otpError" class="error-message">Please enter the OTP</span>
-                  <span class="verified position-absolute end-0 bottom-0" id="apply-verified">Verified</span>
-                </div>
-              </div>
-              <div class="form-btn d-block pt-4">
-                <button type="submit" id="offer-submit-button" class="border-0" disabled>Submit</button>
-              </div>
-            </form>
-          </div>
-          <div class="card p-4 col-12 col-md-8 col-lg-6 col-xl-5 position-absolute h-100" id="apply-confirmation">
-            <div class="confirmation-msg" id="apply-msg-div">
-              <video src="assets/video/form-msg.mp4" width="100%" autoplay muted inline
-                id="apply-confirmation-video"></video>
-              <div class="great-msg text-center mt-4" id="apply-msg">
-                <h3 class="fs-3 m-0" style="color: #EC7100;">Great!</h3>
-                <p class="m-0 pt-2" style="color: #434343;">Our Dedicated Relationship Manager will contact you shortly
-                </p>
-              </div>
+          <div class="card col-3 col-md-12 col-lg-6">
+            <div class="content">
+              <p class="m-0 fw-bolder">Experience the ease of creating your dream space with our streamlined process.
+                From
+                consultation to final touches, our expert team guides you every step of the way.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- form-popup section end -->
+  <!-- simple-step-section end -->
 
-  <!-- topic-section start -->
-  <section class="topic-section">
+  <!-- slider-section start -->
+  <section class="slider-section">
     <div class="container">
       <div class="row">
-        <div class="topic">
-          <ul class="m-0 d-flex justify-content-between align-items-center" id="topic-nav">
-            <li class="text-capitalize"><a href="#buying-process">Buying Process</a></li>
-            <li class="text-capitalize"><a href="#home-loan-eligibility">Home Loan Eligibility</a></li>
-            <li class="text-capitalize"><a href="#home-loan-documents">Home Loan Documents</a></li>
-            <li class="text-capitalize"><a href="#property-documents">Property Documents</a></li>
-            <li class="text-capitalize"><a href="#home-loan-eligibility-requirements">Home Loan Eligibility
-                Requirements</a></li>
-            <li class="text-capitalize"><a href="#faqs">FAQs</a></li>
-            <li class="text-capitalize"><a href="#" id="offerPopUp" class="popUp">Apply Now</a></li>
-          </ul>
-          <div class="slider-arrows" style="z-index: 10;">
-            <p class="prev-arrow" id="prev-arrow">
-              <i class="fa-solid fa-circle-chevron-left"></i>
-            </p>
-            <p class="next-arrow" id="next-arrow">
-              <i class="fa-solid fa-circle-chevron-right"></i>
-            </p>
-          </div>
-        </div>
-
-        <div class="card" id="buying-process">
-          <div class="main-heading">
-            <h2 class="m-0 text-capitalize pb-4">Home Loan Buying Process</h2>
-          </div>
-          <p class="pb-4 col-lg-10">Investing in your dream home is one of the most crucial decisions of your life. This
-            is precisely why your
-            research should be thorough before you get into a long-term repayment commitment with a lender. Here is a
-            quick step-by-step guide on the process of availing of a home loan – from the point of application to the
-            point of disbursal of the amount.</p>
-          <div class="image">
-            <img src="assets/img/buying_process_video.png" alt="">
-            <a href="#">
-              <img src="assets/img/youtube.png" alt="">
-            </a>
-          </div>
-          <p class="pt-4">In this video, we are going to talk about the process of availing a home loan. As a homebuyer,
-            you should
-            know where this process comes in place in the entire home buying journey, what is a loan application and how
-            should you fill it, when and how to negotiate, thus giving you an entire roadmap on the process of availing
-            a home loan so that you can save both time and money.</p>
-
-          <div class="step">
-            <div class="main-heading">
-              <h3 class="m-0 text-capitalize">Step 1: Finalise the property</h3>
+        <div id="sliderAutoplay" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card d-flex justify-content-between flex-row align-items-center">
+                <div class="detail col-5 col-lg-6">
+                  <span class="fw-semibold">Meet the team</span>
+                  <p class="m-0 pt-2">Schedule your design consultation today and meet our experienced team ready to
+                    transform your space. Let's collaborate to create a home that reflects your unique style and vision
+                  </p>
+                </div>
+                <div class="image col-5 col-lg-6 d-flex justify-content-center">
+                  <!-- <img src="assets/img/slider.png" alt="slide"> -->
+                  <canvas id="slide_1" width="1000px" height="450px"></canvas>
+                </div>
+              </div>
             </div>
-            <p>There are two types of property that you can buy- ready-to-move and under-construction. In both cases,
-              loan agreement and loan disbursal stage, which are the final step, varies slightly. We’ll talk about it
-              when we come to it. In the first stage, if you are not buying the property with 100% cash, you will
-              require a home loan. So, finalise your property and get set for loan shopping.</p>
-          </div>
-          <div class="step">
-            <div class="main-heading">
-              <h3 class="m-0 text-capitalize">Step 2: Filling up loan application</h3>
+            <div class="carousel-item">
+              <div class="card d-flex justify-content-between flex-row align-items-center">
+                <div class="detail col-5 col-lg-6">
+                  <span class="fw-semibold">Lock the design</span>
+                  <p class="m-0 pt-2">Schedule your design consultation today and meet our experienced team ready to
+                    transform your space. Let's collaborate to create a home that reflects your unique style and vision
+                  </p>
+                </div>
+                <div class="image col-5 col-lg-6 d-flex justify-content-center">
+                  <!-- <img src="assets/img/slider.png" alt="slide"> -->
+                  <canvas id="slide_2" width="1000px" height="400px"></canvas>
+                </div>
+              </div>
             </div>
-            <p>Once you have finalised the property, homebuyers need to fill a loan application. Homebuyers should
-              enquire about various offers, home loan interest rates, documents required at this stage. At this stage,
-              you can also negotiate the processing fee with the bank.</p>
-            <p>You can start a loan inquiry. For this, you should start comparing interest rates online. This is the
-              easiest way to understand the bank that will provide you the best and lowest home loan interest rate. You
-              can also find all the details on the dedicated home loan page on Housing.com. Post this, you can directly
-              generate an inquiry with the bank either by approaching the nearest bank branch or using the bank’s
-              website.</p>
-            <p>During the inquiry, you can negotiate for the best available rates. Many homebuyers do not know that the
-              home loan interest rate is negotiable. On the basis of your good credit score and income, banks can give
-              you a good interest rate as well. So be aware and ask for it at this stage before it's too late.</p>
-            <p>At this stage, you should also know that an additional expenditure also comes in the form of processing
-              fee which can be anywhere up to 1% of your loan amount. This is also negotiable and most banks will agree
-              for anything between 0.25-0.5% of the loan amount as processing fee.</p>
-            <p>You will also have to pay a fee for due diligence that the bank will do for you. It may happen that banks
-              lower the processing fee but ask you for a higher charge for due diligence. It is important that you
-              clarify this early on, to avoid spending more than what your budget permits.</p>
-            <p>The next step is related to documents. Salaried and self-employed borrowers need to provide separate
-              documents to the bank so that the bank can assess the financial health of the homebuyer. You can refer to
-              the list below. Some of the common documents included are as follows. You can keep these ready whenever
-              you proceed to apply for a home loan. Remember that you should pay the processing fee only to the bank
-              that you feel is giving the best interest rate.</p>
-            <p>List of documents common for both salaried and self-employed individuals: </p>
-            <ul>
-              <li>Loan Application form (completely filled)</li>
-              <li>Passport size photographs</li>
-              <li>Identity Proof Documents Such as PAN Card, Driving License, Passport, Voter ID Card, etc.</li>
-              <li>Residence Proof such as electricity, water or telephone bill, ration card or any other
-                government-issued ID proof that contains your residential address.</li>
-              <li>Copy of bank account statement/passbook entries for the past 6 months</li>
-              <li>Signature Identification proof from current bankers</li>
-              <li>Statement of Personal Assets and Liabilities</li>
-            </ul>
-          </div>
-
-          <div class="table">
-            <p>List of documents that are different for salaried and self-employed individuals. This may change from
-              time to time or depending on the bank.</p>
-
-            <table border="1">
-              <tr>
-                <th>Salaried Individuals</th>
-                <th>Self-Employed Individuals</th>
-              </tr>
-              <tr>
-                <td>Original Salary Certificate from Employer/Last 3 months’ salary slips</td>
-                <td>Acknowledged copies of Income tax returns/assessment orders for the previous 3 months</td>
-              </tr>
-              <tr>
-                <td>TDS Certificate of Form 16 or Copy of Income Tax returns for the last 2 fiscals</td>
-                <td>Photocopies of challans as evidence of advance income tax payments</td>
-              </tr>
-              <tr>
-                <td>Proof of job stability from the current employer</td>
-                <td>Proof of business continuity</td>
-              </tr>
-              <tr>
-                <td>In case the salaried employee has changed jobs in the last 1 year, copies of the offer and joining
-                  letter of the new company need to be submitted.</td>
-                <td></td>
-              </tr>
-            </table>
-          </div>
-          <div class="step">
-            <div class="main-heading">
-              <h3 class="m-0">
-                Step 3: Bank’s due diligence
-              </h3>
-            </div>
-            <p>Banks will not give you a home loan without assessing your financial background, your repaying capacity,
-              the legality of the property, and other details based on their field investigation. This is the next step
-              where the bank does due diligence.</p>
-            <p>Your bank statements, savings, transactions, investments, business activity, credit and repayments, bank
-              balance, cheque bounces - all these are studied by the bank. Now suppose that your cheques have bounced or
-              been returned in the past- this can lead to ineligibility to get a home loan. The bank also studies your
-              liabilities and loans.</p>
-            <p>After this, the bank sees your net income and credit score. A score of 750 and above indicates a healthy
-              credit score and banks are usually willing to give you a better (lower) interest rate.</p>
-            <p>Not just financial health, banks also check your personal details through a field investigation where
-              they check your residential address and contact details. A bank representative may visit your home to
-              confirm such details. Do note that the nature and sector of your job also impact and determines whether
-              you are eligible for a home loan. For example, sectors where there is a risk of job loss or instability,
-              high attrition, are often not considered good. The field representative usually determines this.</p>
-            <p>The property that you are going to buy is also checked. The property’s condition, quality, encroachments,
-              valuation- all these aspects are checked by the bank. If the property is under construction, then the
-              construction progress, its quality, building plan, and layout are also carefully examined. This is the
-              technical due-diligence stage.</p>
-            <p>Next is the legal due diligence stage. Ownership and encumbrance related documents are checked. In the
-              case of unestablished ownership or a third party’s claim on the property, banks do not approve of the home
-              loan. This is also one of the reasons why taking a home loan is beneficial in many ways. Banks check the
-              entire title deed, possession certificate, sale agreement, etc. It will help you make an informed
-              decision. Even in the case of an under-construction property, banks study and examine land ownership,
-              allotment letters, builder-buyer agreement, project approval documents, etc.</p>
-          </div>
-          <div class="step">
-            <div class="main-heading">
-              <h3 class="m-0">Step 4: Estimating your creditworthiness and loan eligibility</h3>
-            </div>
-            <p>Once banks establish that the property you are interested in is sound and free of legal hassles, it does
-              a deep-dive into your creditworthiness. For this, banks study your repayment history and check for
-              defaults. You can even get a higher loan amount in case you have been able to maintain a good credit
-              score, throughout.</p>
-            <p>At this stage, banks assess your EMI repayment capacity based on your income and liabilities, if any. For
-              example, Amit has an income of Rs 50,000 per month and a car loan liability of Rs 10,000 per month. The
-              total disposable income of Amit is Rs 40,000 per month. Banks consider it good if your EMI is not more
-              than 50% of your disposable income. In this case, therefore, Amit can spend Rs 20,000 per maximum as EMI,
-              and therefore, the home loan sanctioned may roughly be between Rs 20-25 lakh. It depends on different
-              banks, how they assess and calculate your repayment capacity. In short, banks check the Loan to Value
-              ratio and do not sanction more than 80-90 %. It also checks your income, age, company, nature of work, etc
-              to calculate your home loan eligibility.</p>
-          </div>
-          <div class="step">
-            <div class="main-heading">
-              <h3 class="m-0">Step 5: Accepting the offer letter</h3>
-            </div>
-            <p>After various checks, the bank sends you an offer letter with the final loan amount mentioned in it. If
-              you sign, it is considered as accepted formally. You can then sign the loan agreement. After this, the
-              bank hands over the DD to the seller and you can take possession of the property.</p>
-            <p>The offer letter clearly mentions the sanctioned loan amount, rate of interest- whether fixed or
-              variable. Fixed interest rates are higher than variable but even fixed is not altogether a fixed rate,
-              these could be floating rates as well and could be fixed for a certain period. It totally depends on you
-              whether you choose, fixed and floating rate or variable. The offer letter also mentions the tenure, number
-              of EMIs to be paid, mode of repayment whether post-dated cheques or electronic clearing; schemes availed
-              such as PMAY or bank offers, validity, terms, and conditions, etc. You should sign the offer letter only
-              if you are satisfied with the offer. Do remember to check the sanctioned amount.</p>
-            <p>Pro Tip: If you can arrange some finances from friends and family, you can also ask the bank to reduce
-              the loan amount sanctioned.</p>
-            <p>The next step is the loan agreement. All borrowers need to sign it in case of a joint home loan. If you
-              have planned to opt for post-dated cheques as repayment option, banks collect cheques equivalent to the
-              loan amount at this stage, for security.</p>
-            <p>In the case of an under-construction property, the process is slightly different. A tripartite agreement
-              is signed at this stage between the bank, borrower, and builder.</p>
-            <p>The loan disbursement stage for an under-construction property is different and depends on the progress
-              of construction. Accordingly, the bank pays the builder directly and all the original documents are
-              collected from you by the bank.</p>
-            <p>The sale deed is signed in the case of a ready-to-move property. The day it is signed, the DD is directly
-              handed over to the seller. Prior to this, the bank will check whether you have made any down payment and
-              whether the sale deed has been registered at the sub-registrar’s office. Even in ready-to-move property,
-              banks keep all the original property papers. Do keep photocopies of all the documents that you have
-              submitted in the bank.</p>
-
-            <div class="tabMenu pt-4">
-              <div class="tabbar d-flex flex-wrap">
-                <ul style="list-style-type: none;" class="p-0 col-12 col-md-6 col-lg-6">
-                  <li class="d-flex justify-content-between active" style="list-style-type: none;">
-                    <span>The Application</span>
-                    <img src="assets/img/tab-arrow.svg" alt="" class="mt-2" width="25px">
-                  </li>
-                  <li class="d-flex justify-content-between" style="list-style-type: none;">
-                    <span>Processing fee</span>
-                    <img src="assets/img/tab-arrow.svg" alt="" class="mt-2" width="25px">
-                  </li>
-                  <li class="d-flex justify-content-between" style="list-style-type: none;">
-                    <span>Evaluation and personal discussion</span>
-                    <img src="assets/img/tab-arrow.svg" alt="" class="mt-2" width="25px">
-                  </li>
-                  <li class="d-flex justify-content-between" style="list-style-type: none;">
-                    <span>Bank investigation</span>
-                    <img src="assets/img/tab-arrow.svg" alt="" class="mt-2" width="25px">
-                  </li>
-                  <li class="d-flex justify-content-between" style="list-style-type: none;">
-                    <span>Sanctioning of loan after your creditworthiness has been
-                      established</span>
-                    <img src="assets/img/tab-arrow.svg" alt="" class="mt-2" width="25px">
-                  </li>
-                  <li class="d-flex justify-content-between" style="list-style-type: none;">
-                    <span>Assessment and valuation of the property</span>
-                    <img src="assets/img/tab-arrow.svg" alt="" class="mt-2" width="25px">
-                  </li>
-                  <li class="d-flex justify-content-between" style="list-style-type: none;">
-                    <span>Registration process/ signing the loan agreement</span>
-                    <img src="assets/img/tab-arrow.svg" alt="" class="mt-2" width="25px">
-                  </li>
-                  <li class="d-flex justify-content-between" style="list-style-type: none;">
-                    <span>Disbursement of loan amount</span>
-                    <img src="assets/img/tab-arrow.svg" alt="" class="mt-2" width="25px">
-                  </li>
-                </ul>
-                <div class="menu-content col-12 col-md-6 col-lg-5 position-relative">
-                  <div class="content mt-1 active">
-                    <p class="m-0 py-3 px-4 w-100">The application process begins with you filling out a form in which
-                      you disclose vital personal and professional information, your assets and liabilities, the
-                      property details (in case it has been finalized already) and its estimated cost. The application
-                      form may differ in format from lender to lender, but basically it seeks similar information.</p>
-                  </div>
-                  <div class="content mt-1">
-                    <p class="m-0 py-3 px-4 w-100">step 2 The application process begins with you filling out a form in
-                      which you disclose vital personal and professional information, your assets and liabilities, the
-                      property details (in case it has been finalized already) and its estimated cost. The application
-                      form may differ in format from lender to lender, but basically it seeks similar information.</p>
-                  </div>
-                  <div class="content mt-1">
-                    <p class="m-0 py-3 px-4 w-100">step 3 The application process begins with you filling out a form in
-                      which you disclose vital personal and professional information, your assets and liabilities, the
-                      property details (in case it has been finalized already) and its estimated cost. The application
-                      form may differ in format from lender to lender, but basically it seeks similar information.</p>
-                  </div>
-                  <div class="content mt-1">
-                    <p class="m-0 py-3 px-4 w-100">The application process begins with you filling out a form in which
-                      you disclose vital personal and professional information, your assets and liabilities, the
-                      property details (in case it has been finalized already) and its estimated cost. The application
-                      form may differ in format from lender to lender, but basically it seeks similar information.</p>
-                  </div>
-                  <div class="content mt-1">
-                    <p class="m-0 py-3 px-4 w-100">step 3 The application process begins with you filling out a form in
-                      which you disclose vital personal and professional information, your assets and liabilities, the
-                      property details (in case it has been finalized already) and its estimated cost. The application
-                      form may differ in format from lender to lender, but basically it seeks similar information.</p>
-                  </div>
-                  <div class="content mt-1">
-                    <p class="m-0 py-3 px-4 w-100">The application process begins with you filling out a form in which
-                      you disclose vital personal and professional information, your assets and liabilities, the
-                      property details (in case it has been finalized already) and its estimated cost. The application
-                      form may differ in format from lender to lender, but basically it seeks similar information.</p>
-                  </div>
-                  <div class="content mt-1">
-                    <p class="m-0 py-3 px-4 w-100">step 10 The application process begins with you filling out a form in
-                      which you disclose vital personal and professional information, your assets and liabilities, the
-                      property details (in case it has been finalized already) and its estimated cost. The application
-                      form may differ in format from lender to lender, but basically it seeks similar information.</p>
-                  </div>
-                  <div class="content mt-1">
-                    <p class="m-0 py-3 px-4 w-100">The application process begins with you filling out a form in which
-                      you disclose vital personal and professional information, your assets and liabilities, the
-                      property details (in case it has been finalized already) and its estimated cost. The application
-                      form may differ in format from lender to lender, but basically it seeks similar information.</p>
-                  </div>
+            <div class="carousel-item">
+              <div class="card d-flex justify-content-between flex-row align-items-center">
+                <div class="detail col-5 col-lg-6">
+                  <span class="fw-semibold">Get work done by experts</span>
+                  <p class="m-0 pt-2">Schedule your design consultation today and meet our experienced team ready to
+                    transform your space. Let's collaborate to create a home that reflects your unique style and vision
+                  </p>
+                </div>
+                <div class="image col-5 col-lg-6 d-flex justify-content-center">
+                  <!-- <img src="assets/img/slider.png" alt="slide"> -->
+                  <canvas id="slide_3" width="1000px" height="400px"></canvas>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card" id="home-loan-eligibility">
-          <div class="main-heading">
-            <h2 class="m-0">What is Home Loan Eligibility?</h2>
+          <div class="carousel-indicators gap-1 m-0">
           </div>
-          <p class="pt-4">Home loan eligibility is defined as a set of criteria basis which a financial institution
-            assesses the creditworthiness of a customer to avail and repay a particular loan amount. Home loan
-            eligibility depends on criteria such as age, financial position, credit history, credit score, other
-            financial obligations etc.</p>
         </div>
-        <div class="card" id="home-loan-documents">
-          <div class="main-heading">
-            <h2 class="m-0">Home Loan Documents</h2>
-          </div>
-          <p class="pt-4">The lender has to assess your financial health before it decides that you are mortgage worthy.
-            Further, it’s a sizable amount to be repaid over the long term by you and the lender must know that you will
-            be able to service your loan diligently through the tenure.</p>
-          <p class="pt-3">In order to judge your credit worthiness, your prospective lender will therefore ask you to
-            submit a host of documents. The following are the documents you need in you home loan application file.</p>
-        </div>
-        <div class="card" id="property-documents">
-          <div class="main-heading">
-            <h2 class="m-0">Property Documents</h2>
-          </div>
-          <p class="pt-4">If a flat is being purchased from the builder</p>
-          <p class="pt-3">If the property being purchased is located in a Cooperative Society</p>
-          <p class="pt-3">If you are constructing a house on own land</p>
-          <p class="pt-3">Putting together these documents may seem like an arduous task to you, but do go through the
-            documentation process properly to ensure that there are no gaps from your end that may be the cause of your
-            loan application getting rejected.</p>
-        </div>
-        <div class="card" id="property-documents">
-          <div class="main-heading">
-            <h2 class="m-0">Home Loan Fees and Charges</h2>
-          </div>
-          <p class="pt-4">When you are comparing lenders and checking out home loan options, you should not only look at
-            interest rate comparisons but also the various other fees and charges. Some of these charges need to be paid
-            upfront while you are taking the loan while other charges are levied during the tenure of your loan. While
-            negotiating with lenders, you should have a clear idea about the various other charges so that you can
-            negotiate well and get the maximum benefits. Here is a checklist on charges that will come in handy when you
-            are shopping for a home loan:</p>
-          <p class="pt-3">While shopping for your home loan, you must clarify and negotiate on each of these charges
-            with your lender, so that there are no nasty surprises later.</p>
-        </div>
-        <div class="card" id="home-loan-eligibility-requirements">
-          <div class="main-heading">
-            <h2 class="m-0">Home Loan Eligibility Requirements</h2>
-          </div>
-          <p class="pt-4">A lender needs proof to establish your repayment capability. For this, it will take a thorough
-            look not just as your income statements but also your assets and liabilities and your credit history.</p>
-          <p class="pt-3">The standard method banks use to assess your home loan eligibility is the application of FOIR
-            (fixed obligation to income ratio) of a borrower. To calculate the FOIR, the lender takes into consideration
-            all the other monthly instalments a borrower is paying including the home loan that he has applied for.
-            However, the statutory deductions from your salary like provident fund, insurance premium payments are not
-            taken into consideration in this calculation.</p>
-          <p class="pt-3">Suppose the income of a prospective borrower is Rs 50,000 per month.</p>
-          <p class="pt-3">He pays a car loan EMI of Rs 8,000 per month</p>
-          <p class="pt-3">He has just bought a gadget and pays an EMI of Rs 2,000 per month for the same</p>
-          <p class="pt-3">His proposed housing loan installment is Rs 15,000 per month</p>
-          <p class="pt-3">When all his loan installments are divided by his monthly income, the FOIR is 50% or Rs 25,000
-          </p>
-          <p class="pt-3">Most lenders restrict the FOIR limit to a maximum of 50% of one’s monthly income. It means
-            that if one needs around 50% of his income to meet his personal expenses, the other half is committed
-            towards fulfilling his fixed obligations, including the home loan.</p>
+      </div>
+    </div>
+  </section>
+  <!-- slider-section end -->
 
-          <p class="pt-4">It is very important to understand and estimate your budget before you finalise on your
-            property. It is equally important to think of how you are going to finance your purchase. Would you be using
-            your savings or would you prefer to go the home loan way? Most people also choose the mid-way, that is,
-            using some amount of your savings and some amount as a loan to finance the property. Any of these solutions
-            work well for a homebuyer. However, most people do opt for home loans. One of the benefits of opting for a
-            home loan is that you can preserve your liquidity.</p>
-          <p class="pt-4">What are the benefits of taking a home loan? For one, it is the cheapest loan available. But,
-            the catch is that everyone is not eligible for a home loan! Home loan eligibility depends not only on your
-            salary but other factors as well which we are going to discuss in this video.</p>
-          <p class="pt-4">What is the logic behind banks calculating your home loan eligibility? Banks study your
-            repayment capacity before they roll out a loan for you. Suppose you are someone earning a lakh per month. A
-            bank will calculate with the logic that 50% of the income is spent on personal and other expenses while the
-            other 50% can be your savings or go into an investment.</p>
-          <p class="pt-4">How to calculate home loan eligibility</p>
-          <p class="pt-2">Calculating your home loan eligibility is simple with this formula:</p>
-          <p class="pt-2">(Monthly fixed income * 50%)- other EMI payments/ EMI per lakh. This gives you the loan
-            eligibility amount in lakh.</p>
-          <p class="pt-2">Note that per lakh EMI varies depending upon the tenure of repayment that you choose. You will
-            also be provided with an EMI chart which will clearly show you your monthly repayment over the years. For
-            example, assuming that home loan interest is at 10.5% and the amount of loan is Rs 1 lakh, then your monthly
-            EMI is as shown here:</p>
-
-          <p class="pt-2">We’ll make it simpler for you. You can access the EMI calculator on Housing.com to arrive at
-            the exact EMI amount you’ll be paying every month over a period of time.</p>
-          <p class="pt-2">Housing.com EMI Calculator can be accessed here:</p>
-          <a href="https://housing.com/home-loans-emi-calculator">https://housing.com/home-loans-emi-calculator</a>
-          <p class="pt-4">Factors that determine your home loan eligibility</p>
-          <p class="pt-3">You would have clearly understood that your take-home salary is one of the top determinants to
-            calculate your home loan eligibility. Let’s look at some quantitative factors too:</p>
-          <ul>
-            <li>Loan to value ratio</li>
-            <li>Banks generally do not grant more than 80 per cent of the value of property as loan? This is called loan
-              to value ratio. In short, if you are interested to buy a property worth Rs 1 crore, loan sanctioned will
-              not be more than Rs 80 lakh. So how would you pay the rest of the Rs 20 lakh? This is where downpayment
-              comes in the picture. Down Payment means you will have to pay the remainder from your pocket!</li>
-            <li>Loan to value ratio</li>
-            <li>If you are opting for a long repayment tenure, there are chances you would be better positioned to avail
-              a home loan. When the EMI burden is spread over a long tenure, the EMI is lower. Not just the tenure of
-              loan repayment, your age will also matter! If you are 45, your working age is merely 15 more years and
-              therefore your repayment can only be over the next 15 years. But suppose you are 25 -- you can spread your
-              EMI burden over a longer period, that is 30 years and therefore higher chances of being eligible for a
-              home loan.</li>
-            <li>Interest rate</li>
-            <li>This is a top concern among all potential home buyers who are hunting for the right loans. Cheaper loans
-              means you have better chances of being eligible for a home loan and therefore you will find many praying
-              for a pocket-friendly interest rate!</li>
-            <li>Other EMIs</li>
-            <li>Are you paying other EMIs such as education loan, vehicle loan. Higher EMI outflows lowers your chances
-              of being eligible.</li>
-            <li>Credit history</li>
-            <li>Your credit score is also important as it provides a look into your transaction and repayment history.
-              If your credit score shows that you have defaulted, there is no chance you’ll be eligible for a loan! So
-              keep your score healthy. A score above 700 is considered good!</li>
-            <li>Your qualifications</li>
-            <li>Your educational qualification, work experience, growth prospects and stability are also equally
-              important. Those who have professional degrees may be treated with better interest rates and may have a
-              better chance at securing a home loan. Similarly if you are working in a coveted field, you stand a good
-              chance. Besides, your employer’s reputation is also considered. Bigger companies promise lower interest
-              rates!</li>
-            <li>Family and work background</li>
-            <li>Can your family and background help your home loan eligibility? Banks categorise certain sectors as
-              risky, for example the BPOs. Apart from this, jobs or sectors where layoffs and attrition is high are also
-              not given much consideration when it comes to eligibility. But suppose your family background is
-              impressive and your family members are professionals- these details help banks assess your repayment
-              capacity.</li>
-            <li>Spending habits</li>
-            <li>Do you live life king size? This may not be good news for your bank. If you are someone used to spending
-              a lot or have many dependents on you, you are a risky customer for the bank.</li>
-            <li>Type of property</li>
-            <li>Type of property also determines your eligibility. In case of a ready-to-move property, you may get a
-              loan but in case of an under-construction property, loan roll out is dependent on the stage of
-              construction. If you are looking to buy a property with a general power of attorney, bad news, because
-              banks usually do not prefer financing such properties.</li>
-            <li>Summing this up for you:</li>
-            <li class="pt-5">Main factors that determine eligibility for home loan are:</li>
-          </ul>
-          <div class="table">
-            <table>
-              <tr>
-                <th>Age of the Applicant</th>
-                <th>18 to 70 years</th>
-              </tr>
-              <tr>
-                <td>Eligible Salary</td>
-                <td>Rs. 25,000 per month and above</td>
-              </tr>
-              <tr>
-                <td>Work Experience for Salaried</td>
-                <td>3 years and above</td>
-              </tr>
-              <tr>
-                <td>Business Stability for Self Employed</td>
-                <td>5 years and above</td>
-              </tr>
-              <tr>
-                <td>Minimum CIBIL Score</td>
-                <td>650</td>
-              </tr>
-              <tr>
-                <td>Maximum Loan on Property Value</td>
-                <td>Up to 90%</td>
-              </tr>
-              <tr>
-                <td>Maximum EMI as percent of income</td>
-                <td>65%</td>
-              </tr>
-              <tr>
-                <td>Eligibility with Co-applicant</td>
-                <td>Up to 3 earning family members may be added to get higher loan eligibility</td>
-              </tr>
-            </table>
-          </div>
-          <p class="pt-5">How to enhance your home loan eligibility</p>
-          <p class="pt-3">You might have already checked whether or not you are eligible for a home loan. The good news
-            is there are ways to enhance your eligibility. Consider these quicks tips:</p>
-          <ul class="pt-3">
-            <li>Add a Joint applicant (spouse, blood relations) to show a higher joint income, hence better chance to
-              avail a home loan.</li>
-            <li>Add other incomes - yearly bonus, rent from property, FD interest. Remember to show proof of these
-              incomes as well.</li>
-            <li>Opt for a longer repayment tenure</li>
-            <li>Consider paying off all the other EMIs before applying for a home loan. This will give you more
-              disposable income.</li>
-          </ul>
-          <p class="pt-2">So now that you know how to assess your eligibility, we hope it's happy home buying time for
-            you! If you liked this video, do like and subscribe to Housing.com. Visit Housing.com Home Loans for more
-            information and don’t forget to share this video with friends!</p>
+  <!-- tailored-interior-section start -->
+  <section class="tailored-interior-section">
+    <div class="container">
+      <div class="row">
+        <div class="main-heading pb-4">
+          <h2 class="m-0 fw-medium">Tailored Interior Solutions for Every Space</h2>
+          <p class="m-0 fw-normal py-2">Schedule your design consultation today and meet our experienced <br> team ready
+            to transform your space.</p>
         </div>
-        <div class="card col-lg-10 m-auto" id="faqs">
-          <div class="main-heading">
-            <h2 class="m-0 text-center">Frequently Asked Questions</h2>
+        <div class="card-group d-flex flex-wrap">
+          <div class="card col-12 col-sm-12 col-md-4">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Modular Kitchen</span>
+              <p class="m-0 fw-normal w-100">Efficient, stylish modular kitchens tailored to your culinary needs.</p>
+            </div>
           </div>
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  How do I post a property for rent on Realezi.com ?
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                  <code>.accordion-flush</code> class. This is the first item's accordion body.
-                </div>
-              </div>
+          <div class="card col-6 col-sm-6 col-md-4">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Wardrobes</span>
+              <p class="m-0 fw-normal w-100">Custom wardrobes designed for your storage and style preferences.</p>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                  What details should I include to advertise my property for sale on Realezi.com? </button>
-              </h2>
-              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                  <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this
-                  being filled with some actual content.
-                </div>
-              </div>
+          </div>
+          <div class="card col-6 col-sm-6 col-md-4">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Master Bedroom</span>
+              <p class="m-0 fw-normal w-100">Transform your master bedroom into a luxurious retreat.</p>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  What are the benefits of posting a property on Realezi.com? </button>
-              </h2>
-              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                  <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-                  happening here in terms of content, but just filling up the space to make it look, at least at first
-                  glance, a bit more representative of how this would look in a real-world application.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="card-group d-flex flex-wrap">
+          <div class="card col-12 col-sm-6 col-lg-3">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Bathroom</span>
+              <p class="m-0 fw-normal w-100">Elegant bathroom solutions for comfort and functionality</p>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                  How do I post a property for rent on Realezi.com ?</button>
-              </h2>
-              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                  <code>.accordion-flush</code> class. This is the first item's accordion body.
-                </div>
-              </div>
+          </div>
+          <div class="card col-6 col-sm-6 col-lg-6">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Kitchen False Ceiling</span>
+              <p class="m-0 fw-normal w-100">Enhance your kitchen with innovative false ceiling designs.</p>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                  What details should I include to advertise my property for sale on Realezi.com? </button>
-              </h2>
-              <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                  <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this
-                  being filled with some actual content.
-                </div>
-              </div>
+          </div>
+          <div class="card col-6 col-sm-12 col-lg-3">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Balcony</span>
+              <p class="m-0 fw-normal w-100">Create an inviting outdoor space with our balcony designs.</p>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                  What are the benefits of posting a property on Realezi.com? </button>
-              </h2>
-              <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                  <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-                  happening here in terms of content, but just filling up the space to make it look, at least at first
-                  glance, a bit more representative of how this would look in a real-world application.
-                </div>
+          </div>
+        </div>
+        <div class="card-group d-flex flex-wrap">
+          <div class="card col-3">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Kids Room</span>
+              <p class="m-0 fw-normal w-100">Fun and functional designs for your child's room</p>
+            </div>
+          </div>
+          <div class="card col-3">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Dining Room</span>
+              <p class="m-0 fw-normal w-100">Elevate dining experiences with our sophisticated designs</p>
+            </div>
+          </div>
+          <div class="card col-3">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">TV Unit</span>
+              <p class="m-0 fw-normal w-100">Sleek and practical TV units for your entertainment area.</p>
+            </div>
+          </div>
+          <div class="card col-3">
+            <div class="content d-flex flex-wrap justify-content-between bg-white rounded-3">
+              <span class="text-capitalize fw-medium fs-4 w-100">Living Room</span>
+              <p class="m-0 fw-normal w-100">Designs that harmonize comfort and style in your living space.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- tailored-interior-section end -->
+
+  <!-- home-interior-section start -->
+  <section class="referral-program-section">
+    <div class="container">
+      <div class="row">
+        <div class="card-group d-flex flex-wrap align-items-center justify-content-evenly">
+          <div class="card col-12 col-sm-10 col-md-6">
+            <div class="content">
+              <img src="assets/img/home_interior.png" alt="home_interior" width="100%">
+            </div>
+          </div>
+          <div class="card col-12 col-sm-12 col-md-6">
+            <div class="content">
+              <h2 class="fw-semibold m-0 text-capitalize">Referral Program</h2>
+              <p class="m-0 fw-normal py-4">Join our referral program and earn rewards for every friend you
+                bring to our design family. Share the joy of transforming spaces together</p>
+              <div class="btn d-block text-start p-0">
+                <a href="#" class="fw-normal d-inline-block text-white">Refer now</a>
               </div>
             </div>
           </div>
@@ -1328,15 +888,19 @@
       </div>
     </div>
   </section>
-  <!-- topic-section end -->
+  <!-- home-interior-section end -->
 
   <!-- Footer Starts -->
   <footer class="footer">
     <div class="container">
+      <div class="consultation-container d-flex align-items-center ">
+        <img src="assets/img/Character.png" width="250px" alt="">
+        <button id="freeConsultation" class="open-brochure-modal-container">Book Free Consultion</button>
+      </div>
       <div class="upper-footer">
         <div class="columns d-flex align-items-start justify-content-between my-3">
           <div style="margin-right: 10px;">
-            <img src="./assets/img/logo.png" width="150px" class="mb-3" />
+            <img src="assets/img/logo.png" width="150px" class="mb-3" />
             <h3>
               Click.<br>
               Connect.<br>
@@ -1511,17 +1075,17 @@
         <div class="lower-bottom d-flex align-items-center justify-content-between">
           <p class="text-center">©2024 Realezi. All rights reserved</p>
           <p>
-            Made with love <img src="./assets/img/heart.png" width="15px" /> from
+            Made with love <img src="assets/img/heart.png" width="15px" /> from
             Realezi
           </p>
           <div class="socials-container">
             <a href="https://www.facebook.com/profile.php?id=100095528529674&mibextid=ZbWKwL" target="_blank"
               class="fb-btn social-btn">
-              <img src="./assets/img/fb.png" width="18px" />
+              <img src="assets/img/fb.png" width="18px" />
               <span class="text">Facebook</span>
             </a>
             <a href="https://www.linkedin.com/company/realezi/" target="_blank" class="linkedin-btn social-btn">
-              <img src="./assets/img/linkedin.png" width="18px" />
+              <img src="assets/img/linkedin.png" width="18px" />
               <span class="text">LinkedIn</span>
             </a>
             <a href="https://www.instagram.com/realezi_?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank"
@@ -1534,7 +1098,7 @@
               <span class="text">Instagram</span>
             </a>
             <a href="https://www.youtube.com/@Realezi" target="_blank" class="youtube-btn social-btn">
-              <img src="./assets/img/youtube-triangle.png" width="10px" />
+              <img src="assets/img/youtube-triangle.png" width="10px" />
               <span class="text">Youtube</span>
             </a>
           </div>
@@ -1545,17 +1109,16 @@
   <!-- Footer Ends -->
 
   <!-- js start -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/formValidation.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="assets/js/interior-page.js"></script>
   <script src="js/nav.js"></script>
-  <script src="js/formvalidation.js"></script>
-  <script src="js/homeloan.js"></script>
   <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
   <script src="rive-animations.js"></script>
-  <script defer src="footer.js"></script>
+  <script defer src="./footer.js"></script>
   <!-- js end -->
 </body>
 

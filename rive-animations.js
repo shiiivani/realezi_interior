@@ -28,13 +28,15 @@ const weDesignLayout = new rive.Layout({
   maxX: 0,
   maxY: 50,
   minX: 900,
-  minY: 0
-})
+  minY: 0,
+});
 const weDesign = new rive.Rive({
   src: "./riv/Interior page - We Design.riv",
   canvas: document.getElementById("weDesign"),
   autoplay: true,
-  layout: weDesignLayout,
+  onLoad: () => {
+    weDesign.resizeDrawingSurfaceToCanvas();
+  },
   stateMachines: "State Machine 1",
 });
 // weDesign Popper Animation end
@@ -46,14 +48,16 @@ const weExcuteLayout = new rive.Layout({
   maxX: 20,
   maxY: 50,
   minX: 10,
-  minY: 0
-})
+  minY: 0,
+});
 const weExcute = new rive.Rive({
   src: "./riv/Interior_page-We_excute.riv",
   canvas: document.getElementById("weExcute"),
   autoplay: true,
   stateMachines: "State Machine 1",
-  layout: weExcuteLayout,
+  onLoad: () => {
+    weExcute.resizeDrawingSurfaceToCanvas();
+  },
 });
 const weManage = new rive.Rive({
   src: "./riv/Interior_page-We_manage.riv",
@@ -62,7 +66,7 @@ const weManage = new rive.Rive({
   stateMachines: "State Machine 1",
   layout: new rive.Layout({ fit: "contain", alignment: "center" }),
   onLoad: () => {
-    weExcute.resizeDrawingSurfaceToCanvas();
+    weManage.resizeDrawingSurfaceToCanvas();
   },
 });
 // weDesign Popper Animation end
@@ -74,8 +78,8 @@ const DesignservicesLayout = new rive.Layout({
   maxX: 30,
   maxY: 550,
   minX: 900,
-  minY: 0
-})
+  minY: 0,
+});
 const Designservices = new rive.Rive({
   src: "./riv/Design services(Interior Page).riv",
   canvas: document.getElementById("designService"),
@@ -92,8 +96,8 @@ const homeImprovementsLayout = new rive.Layout({
   maxX: 30,
   maxY: 550,
   minX: 900,
-  minY: 0
-})
+  minY: 0,
+});
 const homeImprovements = new rive.Rive({
   src: "./riv/Home_Improvements.riv",
   canvas: document.getElementById("homeImprovements"),
@@ -110,15 +114,15 @@ const designConsultationLayout = new rive.Layout({
   maxX: 20,
   maxY: 800,
   minX: 900,
-  minY: -200
-})
+  minY: -200,
+});
 const designConsultation = new rive.Rive({
   src: "./riv/Design Consultation(Interior Page).riv",
   canvas: document.getElementById("designConsultation"),
   autoplay: true,
   layout: designConsultationLayout,
   stateMachines: "State Machine 1",
-  
+
   /* onLoad: () => {
     designConsultation.resizeDrawingSurfaceToCanvas();
   }, */
@@ -130,10 +134,10 @@ const slide_1_layout = new rive.Layout({
   fit: rive.Fit.FitHeight,
   alignment: rive.Alignment.TopCenter,
   maxX: 20,
-  maxY:0,
+  maxY: 0,
   minX: 550,
-  minY: -100
-})
+  minY: -100,
+});
 const slide_1 = new rive.Rive({
   src: "./riv/Meet the team (Interiro).riv",
   canvas: document.getElementById("slide_1"),
@@ -145,10 +149,10 @@ const slide_2_layout = new rive.Layout({
   fit: rive.Fit.FitHeight,
   alignment: rive.Alignment.TopCenter,
   maxX: 20,
-  maxY:0,
+  maxY: 0,
   minX: 800,
-  minY: -100
-})
+  minY: -100,
+});
 const slide_2 = new rive.Rive({
   src: "./riv/Lock the design (Interior Page).riv",
   canvas: document.getElementById("slide_2"),
@@ -160,10 +164,10 @@ const slide_3_layout = new rive.Layout({
   fit: rive.Fit.FitHeight,
   alignment: rive.Alignment.TopCenter,
   maxX: 20,
-  maxY:0,
+  maxY: 0,
   minX: 800,
-  minY: -100
-})
+  minY: -100,
+});
 const slide_3 = new rive.Rive({
   src: "./riv/Get work done by experts (Interior page).riv",
   canvas: document.getElementById("slide_3"),
@@ -173,6 +177,4 @@ const slide_3 = new rive.Rive({
 });
 // designConsultation Animation end
 
-
 // interior page end
-
